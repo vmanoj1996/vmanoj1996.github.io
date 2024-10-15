@@ -1,0 +1,181 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* General styles */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+/* Header styles */
+h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+/* Navigation links */
+nav a {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #3498db;
+}
+
+/* Section headers */
+h2 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+/* Paragraph text */
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.profile-image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    border-bottom: 2px solid #2c5282;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c5282;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.experience-item {
+    text-align: center;
+    padding: 0.5rem;
+    background: #f7fafc;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.experience-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.project-card {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #2c5282;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.highlight {
+    color: #2c5282;
+    font-weight: 500;
+}
+
+a {
+    color: #2c5282;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.project-links {
+    margin-top: 0.5rem;
+}
+
+.volunteer-section {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+    
+    .profile-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .project-card {
+        flex-direction: column;
+    }
+    
+    .project-image {
+        width: 100%;
+        height: 200px;
+    }  
+}
