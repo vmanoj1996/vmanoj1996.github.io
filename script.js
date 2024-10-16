@@ -34,3 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const themeButton = document.getElementById('theme-button');
+    const body = document.body;
+
+    // Check for saved user preference and apply the theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+    }
+
+    themeButton.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        
+        // Save the user's theme preference
+        if (body.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.removeItem('theme');
+        }
+    });
+});

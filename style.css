@@ -257,3 +257,42 @@ button:hover {
         margin-top: 1rem;
     }
 }
+
+/* Dark Theme Styles */
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark .navbar {
+    background-color: #1e3d59;
+}
+
+.dark .section {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.dark footer {
+    background-color: #1e3d59;
+}
+
+button#theme-button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #525252;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#theme-button:hover {
+    background-color: #2980b9;
+}
+
+.theme-toggle {
+    text-align: right; /* Aligns the button to the right */
+    margin-top: 1rem; /* Optional: add some margin for spacing */
+}
