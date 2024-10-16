@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -5,121 +6,60 @@
     <title>Manoj Velmurugan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="header">
-        <h1>Manoj Velmurugan</h1>
-        <div class="social-links">
-            <a href="mailto:mvelmurugan@wpi.edu">Email</a>
-            <a href="https://www.linkedin.com/in/manoj-velmurugan/">LinkedIn</a>
-            <a href="https://github.com/vmanoj1996">GitHub</a>
+
+    <!-- Home Section -->
+    <section id="home" class="home_section">
+        <div class="intro_container">
+            <div class="intro_text">
+                <h1>Manoj Velmurugan</h1>
+                <p>PhD Student @ Perception and Autonomous Robotics Group, WPI Robotics</p>
+                <p>I am a Robotics Engineering professional with a focus on autonomy and perception. I have worked on various projects involving UAVs, controls, sensor fusion, and deep learning.</p>
+                <div class="social_links">
+                    <a href="mailto:mvelmurugan@wpi.edu">Email</a>
+                    <a href="https://www.linkedin.com/in/manoj-velmurugan/">LinkedIn</a>
+                    <a href="https://github.com/vmanoj1996">GitHub</a>
+                </div>
+            </div>
+            <!-- Adding the Vicon image with rounded corners beside the text -->
+            <div class="portrait">
+                <img src="./assets/vicon.jpg" alt="Manoj mounting Vicon cameras" class="portrait_image">
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="profile-container">
-        <div class="profile-info">
-            <!-- <p>Recent Robotics Engineering Graduate from <a href="https://www.wpi.edu/">Worcester Polytechnic Institute</a></p>
-            <p>Currently, I am a Robotics Software Intern at <a href="https://www.voidrobotics.com/">Void Robotics</a></p>
-            <p>During my masters, I worked on <a href="https://wp.wpi.edu/merlab/active-vision-for-manipulation/">"Optimizing Active Vision-Based Policy for Robotic Grasping"</a> under Prof. <a href="https://www.wpi.edu/people/faculty/bcalli">Berk Calli</a> at <a href="https://wp.wpi.edu/merlab/">Manipulation & Environmental Robotics Lab</a></p>
-            <p>Previously worked as Project Associate at <a href="https://www.hticiitm.org/">Healthcare Technology Innovation Center, IIT Madras Research Park</a>, working on Software Development, Testing of Motion Planning for Spine Surgery Robot Phase 1</p>
-            <p>Research Intern at <a href="https://www.lincoln.ac.uk">University of Lincoln</a> under Prof. <a href="https://alr.anthropomatik.kit.edu/21_65.php">Gerhad Neumann</a> working on robot simulation and deep learning based vision algorithms</p>
-            <p class="highlight">Currently seeking Full-Time roles in Computer Vision, Robotics, Machine Learning, and AI</p> -->
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <h2 class="section_title">My Tech Odyssey</h2>
+        <div class="experience_container">
+            <div class="experience_card">
+                <img src="path_to_placeholder_icon.png" alt="WPI Logo" class="experience_icon">
+                <h3>PhD Student</h3>
+                <p>Worcester Polytechnic Institute (WPI)</p>
+                <p>2023 - Present</p>
+            </div>
+            <div class="experience_card">
+                <img src="path_to_placeholder_icon.png" alt="MathWorks Logo" class="experience_icon">
+                <h3>Software Developer</h3>
+                <p>MathWorks</p>
+                <p>2019 - 2023</p>
+            </div>
+            <div class="experience_card">
+                <img src="path_to_placeholder_icon.png" alt="IIT Madras Logo" class="experience_icon">
+                <h3>Dual Degree (B.Tech/M.Tech)</h3>
+                <p>Indian Institute of Technology Madras (IITM)</p>
+                <p>2014 - 2019</p>
+            </div>
         </div>
-        <!-- <img src="images/DSC01776.JPG" alt="Profile Photo" class="profile-image"> -->
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Experience</h2>
-        <!-- <div class="experience-grid">
-            <div class="experience-item">
-                <img src="images/void_robotics_logo.jpeg" alt="Void Robotics">
-                <h3>Robotics Software Intern</h3>
-                <p>Void Robotics, WPI</p>
-                <p>July 2024 - Present</p>
-            </div>
-        </div> -->
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Highlighted Projects</h2>
-        <div class="project-card">
-            <!-- <img src="images/Features.png" alt="Masters Capstone" class="project-image">
-            <div class="project-info">
-                <h3> Imitation learning guided Active Vision Robotic Grasping</h3>
-                <p>Advanced camera viewpoint automation on Franka Emika Panda robot through dataset aggregation and epsilon-optimal imitation learning policy evaluation</p>
-                <p>Focused on rapid 3D object recognition using RGB-D Point Cloud descriptors from Intel RealSense data</p>                
-                <div class="project-links">
-                    <a href="https://github.com/UthiraS/ImitationLearning_Franka">GitHub</a> | 
-                    <a href="docs/Usivaraman_Capstone_Project_Report.pdf">Project Report</a> | 
-                    <a href="docs/Capstone_USivaraman.pdf">Presentation</a>
-                </div>
-            </div> -->
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Computer Vision Projects</h2>
-        <!-- <div class="project-card">
-            <img src="images/2D.png" alt="SFM Project" class="project-image">
-            <div class="project-info">
-                <h3>Classical Structure from Motion</h3>
-                <p>Reconstructed 3D building structure from multiple views using epipolar geometry</p>
-                <div class="project-links">
-                    <a href="https://github.com/UthiraS/SFM_NERF">GitHub</a> |
-                    <a href="docs/Report_SFM_NERF.pdf">Project Report</a>
-                </div>
-            </div>
-        </div> -->
-    </div>
-    </div>
-    <div class="section">
-        <!-- <h2 class="section-title">Reinforcement Learning Projects</h2>
-        <div class="project-card">
-            <img src="images/rl.png" alt="dqnrl" class="project-image">
-            <div class="project-info">
-                <h3>Deep Reinforcement Learning for Atari Breakout game from Open Gym AI</h3>
-                <p>Compared various Deep Q learning (Double DQN and Dueliing DQN) for playing Atari Breakout game from Open Gym AI </p>
-                <div class="project-links">
-                    <a href="https://github.com/UthiraS/AIAgentplaying_ATARI">GitHub</a>
-                </div>
-            </div>
-        </div> -->
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Robotics Projects</h2>
-        <!-- <div class="project-card">
-            <img src="images/RRP.png" alt="SCARA Robot" class="project-image">
-            <div class="project-info">
-                <h3>SCARA Robot Simulation</h3>
-                <p>Implemented forward/inverse kinematics and controllers for SCARA (RRP) robot in ROS2/Gazebo</p>
-                <div class="project-links">
-                    <a href="https://github.com/UthiraS/SCARA_ROBOT">GitHub</a>
-                </div>
-            </div>
-        </div> -->
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Volunteer Experience</h2>
-        <!-- <div class="experience-grid">
-            <div class="experience-item">
-                <img src="images/NSS.png" alt="NSS">
-                <h3>Volunteer</h3>
-                <p>National Service Scheme</p>
-                <p>June 2015 - May 2018</p>
-            </div>
-
-        </div> -->
-    </div>
+    </section>
 
     <footer>
         <p style="text-align: right; font-size: 12px;">
             Template Credits
             <br>
             <a href="https://uthiras.github.io/">Uthiralakshmi Sivaraman</a>
-            <br>
-            <a href="https://jonbarron.info/">Jon Barron</a>
         </p>
     </footer>
 </body>
