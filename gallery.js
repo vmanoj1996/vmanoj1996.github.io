@@ -2,13 +2,13 @@
 const mediaItems = [
     {
         type: 'image',
-        src: 'https://www.dropbox.com/scl/fi/3mrjyoromdv5ocps8u0uh/nerc.jpg?rlkey=51ufe8y8lxezxogosx4fdowr0&st=ecz1qqzr&dl=0',
-        alt: 'NERC Symposium',
+        src: 'https://dl.dropbox.com/scl/fi/y5h2rcm4sxewlb5bn9dv6/nerc.jpg?rlkey=js2ty2oepvlbf21btju184zei&st=nhexhbsr&dl=0',
+        caption: 'Northeast Robotics Colloquium (NERC) 2024'
     },
     {
         type: 'image',
-        src: 'https://www.dropbox.com/scl/fi/0t3jqhct5j08kbmbpgyho/mp_teaching.jpg?raw=1',
-        alt: 'Lecture On Motion Planning',
+        src: 'https://dl.dropbox.com/scl/fi/r0vhp1na2val1pwd9heab/mp_teaching.jpg?rlkey=dcfkwijtbgqouiyfs5j33xmyn&st=p1i72pif&dl=0',
+        caption: 'Lecture: Aerial Robotics (Fall 23)'
     }
 
     // You can add more images and videos here
