@@ -26,32 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.addEventListener('click', () => {
         navLinks.classList.toggle('nav_active');
     });
-
-    // Close the navigation menu when a link is clicked (optional enhancement)
-    navLinks.addEventListener('click', () => {
-        if (navLinks.classList.contains('nav_active')) {
-            navLinks.classList.remove('nav_active');
-        }
-    });
 });
+
+
+// MAKE STUFF VISIBLE AFTER LOADING 
 document.addEventListener('DOMContentLoaded', () => {
-    const themeButton = document.getElementById('theme-button');
-    const body = document.body;
+    // Once everything is loaded, add 'loaded' class to the body
+    document.body.classList.add('loaded');
+});
 
-    // Check for saved user preference and apply the theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        body.classList.add(savedTheme);
-    }
+// <div class="logo">Manoj Velmurugan</div>
 
-    themeButton.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        
-        // Save the user's theme preference
-        if (body.classList.contains('dark')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.removeItem('theme');
+
+// highlight the current page on banner
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav_links li a');
+    const currentPage = window.location.pathname.split('/').pop(); // Get current page name
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active'); // Add 'active' class to the matching link
         }
     });
 });
