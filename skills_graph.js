@@ -50,20 +50,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Assign levels to all elements
     elements.forEach(node => assignLevels(node));
 
-    // const width = 900, height = 900; // Canvas dimensions
-    // const svg = d3.select("#skillsGraph")
-    //     .append("svg")
-    //     .attr("width", width)
-    //     .attr("height", height);
+    const width = 900, height = 900; // Canvas dimensions
+    const svg = d3.select("#skillsGraph")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
     
     // Dynamically set the SVG width and height based on the window size
-    const container = d3.select("#skillsGraph");
-    const containerWidth = container.node().getBoundingClientRect().width;
-    const containerHeight = container.node().getBoundingClientRect().height;
+    // const container = d3.select("#skillsGraph");
+    // const containerWidth = container.node().getBoundingClientRect().width;
+    // const containerHeight = container.node().getBoundingClientRect().height;
 
-    const svg = container.append("svg")
-        .attr("width", containerWidth)
-        .attr("height", containerHeight);
+    // const svg = container.append("svg")
+    //     .attr("width", containerWidth)
+    //     .attr("height", containerHeight);
 
     // Set base dimensions, scaling factors, and minimum size
     const baseWidth = 110;
