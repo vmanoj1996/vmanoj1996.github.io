@@ -2,15 +2,14 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const treeData = [
-        ["Autonomy", "Controls", "Perception", "Embedded", "Simulators", "Platforms"],
+        ["Autonomy", "Controls", "Planning", "Perception", "Embedded", "Simulators", "Platforms", "Design Patterns"],
             ["Platforms", "Mobile Robots", "Fixed-Wing", "Quadrotors", "Spacecraft"],
-            ["Embedded", "Middleware", "Design Patterns", "Protocol", "Codegen", "Scheduler"],
+            ["Embedded", "Middleware", "Comm. Protocol", "Codegen"],
                 ["Design Patterns", "State Machines", "PubSub", "Producer-consumer", "Super Loop", "Interrupts"],
-                ["Scheduler", "Cooperative", "Preemptive"],
                 ["Middleware", "PX4", "Ardupilot", "FreeRTOS", "ROS2"],
                 ["Codegen", "Embed. Coder"],
             ["Perception", "Signal Proc.", "CV", "Sensor Fusion", "Deep Learning"],
-                ["Deep Learning", "Architectures", "Optimization", "Data Collection", "Deployment"],
+                ["Deep Learning", "Architectures", "Data Collection", "Deployment"],
             ["Simulators", "MuJoCo", "Gazebo", "Blender", "Simulink"]
     ];
 
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Assign levels to all elements
     elements.forEach(node => assignLevels(node));
 
-    const width = 1000, height = 800; // Canvas dimensions
+    const width = 1000, height = 900; // Canvas dimensions
 
     const svg = d3.select("#skillsGraph")
         .append("svg")
@@ -59,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .attr("height", height);
 
     // Set base dimensions, scaling factors, and minimum size
-    const baseWidth = 120;
-    const baseHeight = 25;
+    const baseWidth = 110;
+    const baseHeight = 22;
     const baseFontSize = 16;
     const scaleFactor = 0.8;  // Scaling factor for each level down the tree
     const minWidth = 60;      // Minimum box width
@@ -68,10 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const minFontSize = 10;   // Minimum font size
 
     const simulation = d3.forceSimulation(elements)
-        .force("link", d3.forceLink(links).id(d => d.id).distance(80)) // Increase distance between nodes
-        .force("charge", d3.forceManyBody().strength(-200))  // Reduce repulsion force
+        .force("link", d3.forceLink(links).id(d => d.id).distance(d => 70 - (d.source.level * 40))) 
+        .force("charge", d3.forceManyBody().strength(-160))  // Reduce repulsion force
         .force("center", d3.forceCenter(width / 2, height / 2))
-        .force("collision", d3.forceCollide().radius(d => 60)) // Add a collision force to prevent overlap
+        .force("collision", d3.forceCollide().radius(d => 58)) // Add a collision force to prevent overlap
         .on("tick", ticked);
 
     const link = svg.append("g")
@@ -106,13 +105,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Hover and highlight function
+    // Highlight immediate children only
     function highlightSubtree(d) {
-        const descendants = getDescendants(d.id);  // Get all descendants of hovered node
+        // Find immediate children by checking the links array
+        const children = new Set();
+        links.forEach(link => {
+            if (link.source.id === d.id) {
+                children.add(link.target.id);  // Add immediate children
+            }
+        });
 
-        // Highlight the hovered node and its descendants
+        // Highlight the hovered node and its immediate children
         node.selectAll("rect")
-            .attr("fill", n => descendants.has(n.id) || n.id === d.id ? "#FFD700" : levelColors[n.parent || n.id]);  // Highlight in yellow
+            .attr("fill", n => children.has(n.id) || n.id === d.id ? "#FFD700" : levelColors[n.parent || n.id]);  // Highlight in yellow
     }
+
 
     function resetHighlight() {
         // Reset the highlight when mouse leaves
@@ -120,27 +127,28 @@ document.addEventListener('DOMContentLoaded', function() {
             .attr("fill", n => levelColors[n.parent || n.id]);  // Reset to original color
     }
 
-    // Apply hover to both rect and text
+    // Apply hover to both rect and text with fixed sizes, except for "Autonomy"
     node.append("rect")
-        .attr("width", d => Math.max(baseWidth * Math.pow(scaleFactor, d.level), minWidth))  // Scale width, with a minimum
-        .attr("height", d => Math.max(baseHeight * Math.pow(scaleFactor, d.level), minHeight)) // Scale height, with a minimum
-        .attr("x", d => -(Math.max(baseWidth * Math.pow(scaleFactor, d.level), minWidth)) / 2) // Center the box
-        .attr("y", d => -(Math.max(baseHeight * Math.pow(scaleFactor, d.level), minHeight)) / 2) // Adjust y-position
+        .attr("width", d => d.id === "Autonomy" ? baseWidth + 50 : baseWidth)  // Bigger width for "Autonomy"
+        .attr("height", d => d.id === "Autonomy" ? baseHeight + 20 : baseHeight)  // Bigger height for "Autonomy"
+        .attr("x", d => d.id === "Autonomy" ? -(baseWidth + 50) / 2 : -(baseWidth / 2))  // Center the box
+        .attr("y", d => d.id === "Autonomy" ? -(baseHeight + 20) / 2 : -(baseHeight / 2))  // Adjust y-position
         .attr("rx", 10)
         .attr("ry", 10)
-        .attr("fill", d => levelColors[d.parent || d.id]) // Use the parent color or self color if it's a parent node
+        .attr("fill", d => levelColors[d.parent || d.id])  // Use the parent color or self color if it's a parent node
         .attr("stroke", "#000")
         .attr("stroke-width", 2)
         .on("mouseover", function(event, d) { highlightSubtree(d); })
         .on("mouseout", resetHighlight);
 
-    // Add hover functionality to text as well
+    // Add hover functionality to text as well, with fixed font size and white text for "Autonomy"
     node.append("text")
         .attr("dy", 5)
         .attr("text-anchor", "middle")
         .text(d => d.id)
-        .attr("fill", "#000")
-        .style("font-size", d => `${Math.max(baseFontSize * Math.pow(scaleFactor, d.level), minFontSize)}px`)
+        .attr("fill", d => d.id === "Autonomy" ? "#FFF" : "#000")  // White font for "Autonomy"
+        .style("font-size", d => d.id === "Autonomy" ? `${baseFontSize + 4}px` : `${baseFontSize}px`)  // Slightly larger font for "Autonomy"
+        .style("font-weight", d => d.id === "Autonomy" ? "bold" : "normal")  // Make "Autonomy" bold
         .on("mouseover", function(event, d) { highlightSubtree(d); })  // Hover over text
         .on("mouseout", resetHighlight);  // Reset on mouseout
 
