@@ -355,12 +355,12 @@ button:hover, .button:hover {
 
 /* Skills */
 #skillsGraph {
-    width: 900px;
+    width: 100%;
     height: 900px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 3px solid #000;
+    /* border: 3px solid #000; */
     justify-content: center;  /* Horizontally center the SVG */
     align-items: center;      /* Vertically center the SVG (optional) */
 }

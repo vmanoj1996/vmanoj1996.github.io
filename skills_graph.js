@@ -50,29 +50,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Assign levels to all elements
     elements.forEach(node => assignLevels(node));
 
-    const width = 900, height = 900; // Canvas dimensions
+    // const width = 900, height = 900; // Canvas dimensions
+
+    // Calculate container size to determine the initial zoom level
+    const container = d3.select("#skillsGraph");
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const containerHeight = container.node().getBoundingClientRect().height;
+    width = containerWidth
+    height = containerHeight
+
+    // Calculate initial zoom scale based on device size (container size vs canvas size)
+    const initialScale = Math.min(containerWidth / width, containerHeight / height);  // Fit the graph into the container
+    console.log(containerWidth, width)
+
+    // Append SVG and apply zoom behavior
     const svg = d3.select("#skillsGraph")
         .append("svg")
         .attr("width", width)
-        .attr("height", height);
+        .attr("height", height)
     
-    // Dynamically set the SVG width and height based on the window size
-    // const container = d3.select("#skillsGraph");
-    // const containerWidth = container.node().getBoundingClientRect().width;
-    // const containerHeight = container.node().getBoundingClientRect().height;
-
-    // const svg = container.append("svg")
-    //     .attr("width", containerWidth)
-    //     .attr("height", containerHeight);
-
     // Set base dimensions, scaling factors, and minimum size
     const baseWidth = 110;
     const baseHeight = 30;
     const baseFontSize = 12;
-    const scaleFactor = 0.8;  // Scaling factor for each level down the tree
-    const minWidth = 60;      // Minimum box width
-    const minHeight = 15;     // Minimum box height
-    const minFontSize = 10;   // Minimum font size
 
     const simulation = d3.forceSimulation(elements)
         .force("link", d3.forceLink(links).id(d => d.id).distance(d => 70 - (d.source.level * 40))) 
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .on("mouseover", function(event, d) { highlightSubtree(d); })  // Hover over text
         .on("mouseout", resetHighlight);  // Reset on mouseout
 
-    
+
     function ticked() {
         link
             .attr("x1", d => d.source.x)
