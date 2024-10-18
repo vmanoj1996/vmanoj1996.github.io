@@ -50,17 +50,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Assign levels to all elements
     elements.forEach(node => assignLevels(node));
 
-    const width = 1000, height = 900; // Canvas dimensions
+    // const width = 900, height = 900; // Canvas dimensions
+    // const svg = d3.select("#skillsGraph")
+    //     .append("svg")
+    //     .attr("width", width)
+    //     .attr("height", height);
+    
+    // Dynamically set the SVG width and height based on the window size
+    const container = d3.select("#skillsGraph");
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const containerHeight = container.node().getBoundingClientRect().height;
 
-    const svg = d3.select("#skillsGraph")
-        .append("svg")
-        .attr("width", width)
-        .attr("height", height);
+    const svg = container.append("svg")
+        .attr("width", containerWidth)
+        .attr("height", containerHeight);
 
     // Set base dimensions, scaling factors, and minimum size
     const baseWidth = 110;
-    const baseHeight = 22;
-    const baseFontSize = 16;
+    const baseHeight = 30;
+    const baseFontSize = 12;
     const scaleFactor = 0.8;  // Scaling factor for each level down the tree
     const minWidth = 60;      // Minimum box width
     const minHeight = 15;     // Minimum box height
@@ -114,18 +122,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 children.add(link.target.id);  // Add immediate children
             }
         });
-
-        // Highlight the hovered node and its immediate children
+    
+        // Highlight the immediate children in yellow, and adjust transparency
         node.selectAll("rect")
-            .attr("fill", n => children.has(n.id) || n.id === d.id ? "#FFD700" : levelColors[n.parent || n.id]);  // Highlight in yellow
+            .attr("fill", n => children.has(n.id) ? "#FFD700" : levelColors[n.parent || n.id])  // Highlight children in yellow
+            .attr("opacity", n => children.has(n.id) || n.id === d.id ? 1 : 0.5);  // Set opacity: 1 for hovered and children, 0.5 for others
+    
+        // Adjust transparency for text elements as well
+        node.selectAll("text")
+            .attr("opacity", n => children.has(n.id) || n.id === d.id ? 1 : 0.5);  // Same opacity rule for text
     }
-
-
+    
     function resetHighlight() {
-        // Reset the highlight when mouse leaves
+        // Reset the highlight and restore full opacity to all nodes
         node.selectAll("rect")
-            .attr("fill", n => levelColors[n.parent || n.id]);  // Reset to original color
+            .attr("fill", n => levelColors[n.parent || n.id])  // Reset to original color
+            .attr("opacity", 1);  // Restore full opacity
+    
+        // Reset opacity for text as well
+        node.selectAll("text")
+            .attr("opacity", 1);  // Restore full opacity for text
     }
+    
 
     // Apply hover to both rect and text with fixed sizes, except for "Autonomy"
     node.append("rect")
@@ -136,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .attr("rx", 10)
         .attr("ry", 10)
         .attr("fill", d => levelColors[d.parent || d.id])  // Use the parent color or self color if it's a parent node
-        .attr("stroke", "#000")
-        .attr("stroke-width", 2)
+        // .attr("stroke", "#000")
+        // .attr("stroke-width", 2)
         .on("mouseover", function(event, d) { highlightSubtree(d); })
         .on("mouseout", resetHighlight);
 
@@ -148,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .text(d => d.id)
         .attr("fill", d => d.id === "Autonomy" ? "#FFF" : "#000")  // White font for "Autonomy"
         .style("font-size", d => d.id === "Autonomy" ? `${baseFontSize + 4}px` : `${baseFontSize}px`)  // Slightly larger font for "Autonomy"
-        .style("font-weight", d => d.id === "Autonomy" ? "bold" : "normal")  // Make "Autonomy" bold
+        .style("font-weight", d => d.id === "Autonomy" ? "bold" : "bold")  // Make "Autonomy" bold
         .on("mouseover", function(event, d) { highlightSubtree(d); })  // Hover over text
         .on("mouseout", resetHighlight);  // Reset on mouseout
 
