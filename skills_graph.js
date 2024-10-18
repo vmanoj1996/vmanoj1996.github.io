@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set base dimensions, scaling factors, and minimum size
     const baseWidth = 110;
     const baseHeight = 30;
-    const baseFontSize = 12;
+    const baseFontSize = 15;
 
     const simulation = d3.forceSimulation(elements)
-        .force("link", d3.forceLink(links).id(d => d.id).distance(d => 70 - (d.source.level * 40))) 
+        .force("link", d3.forceLink(links).id(d => d.id).distance(d => 73 - (d.source.level * 45))) 
         .force("charge", d3.forceManyBody().strength(-160))  // Reduce repulsion force
         .force("center", d3.forceCenter(width / 2, height / 2))
         .force("collision", d3.forceCollide().radius(d => 58)) // Add a collision force to prevent overlap
@@ -117,34 +117,82 @@ document.addEventListener('DOMContentLoaded', function() {
     // Highlight immediate children only
     function highlightSubtree(d) {
         // Find immediate children by checking the links array
-        const children = new Set();
+        const children = new Set();// Highlight immediate children only
+        function highlightSubtree(d) {
+            // Find immediate children by checking the links array
+            const children = new Set();
+            links.forEach(link => {
+                if (link.source.id === d.id) {
+                    children.add(link.target.id);  // Add immediate children
+                }
+            });
+        
+            // Highlight the immediate children in yellow, and adjust transparency for nodes
+            node.selectAll("rect")
+                .attr("fill", n => children.has(n.id) ? "#FFD700" : levelColors[n.parent || n.id])  // Highlight children in yellow
+                .attr("opacity", n => children.has(n.id) || n.id === d.id ? 1 : 0.5);  // Set opacity: 1 for hovered and children, 0.5 for others
+        
+            // Adjust transparency for text elements as well
+            node.selectAll("text")
+                .attr("opacity", n => children.has(n.id) || n.id === d.id ? 1 : 0.5);  // Same opacity rule for text
+        
+            // Adjust transparency for links
+            link
+                .attr("opacity", l => l.source.id === d.id || l.target.id === d.id ? 1 : 0.5);  // Set opacity: 1 for links connected to the hovered node, 0.5 for others
+        }
+        
+        // Reset highlight function to restore full opacity to all nodes and links
+        function resetHighlight() {
+            // Reset the highlight and restore full opacity to all nodes
+            node.selectAll("rect")
+                .attr("fill", n => levelColors[n.parent || n.id])  // Reset to original color
+                .attr("opacity", 1);  // Restore full opacity
+            
+            // Reset opacity for text as well
+            node.selectAll("text")
+                .attr("opacity", 1);  // Restore full opacity for text
+        
+            // Reset opacity for all links
+            link
+                .attr("opacity", 1);  // Restore full opacity for links
+        }
+            
         links.forEach(link => {
             if (link.source.id === d.id) {
                 children.add(link.target.id);  // Add immediate children
             }
         });
-    
-        // Highlight the immediate children in yellow, and adjust transparency
+
+        // Highlight the immediate children in yellow, and adjust transparency for nodes
         node.selectAll("rect")
             .attr("fill", n => children.has(n.id) ? "#FFD700" : levelColors[n.parent || n.id])  // Highlight children in yellow
             .attr("opacity", n => children.has(n.id) || n.id === d.id ? 1 : 0.5);  // Set opacity: 1 for hovered and children, 0.5 for others
-    
+
         // Adjust transparency for text elements as well
         node.selectAll("text")
             .attr("opacity", n => children.has(n.id) || n.id === d.id ? 1 : 0.5);  // Same opacity rule for text
+
+        // Adjust transparency for links
+        link
+            .attr("opacity", l => l.source.id === d.id || l.target.id === d.id ? 1 : 0.5);  // Set opacity: 1 for links connected to the hovered node, 0.5 for others
     }
-    
+
+    // Reset highlight function to restore full opacity to all nodes and links
     function resetHighlight() {
         // Reset the highlight and restore full opacity to all nodes
         node.selectAll("rect")
             .attr("fill", n => levelColors[n.parent || n.id])  // Reset to original color
             .attr("opacity", 1);  // Restore full opacity
-    
+        
         // Reset opacity for text as well
         node.selectAll("text")
             .attr("opacity", 1);  // Restore full opacity for text
+
+        // Reset opacity for all links
+        link
+            .attr("opacity", 1);  // Restore full opacity for links
     }
-    
+        
 
     // Apply hover to both rect and text with fixed sizes, except for "Autonomy"
     node.append("rect")

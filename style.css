@@ -364,3 +364,5 @@ button:hover, .button:hover {
     justify-content: center;  /* Horizontally center the SVG */
     align-items: center;      /* Vertically center the SVG (optional) */
 }
+
+/* Media query for screens smaller than 900px in width */
