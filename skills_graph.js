@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 ["Scheduler", "Cooperative", "Preemptive"],
                 ["Middleware", "PX4", "Ardupilot", "FreeRTOS", "ROS2"],
                 ["Codegen", "Embed. Coder"],
-            ["Perception", "Signal Proc.", "CV", "Sensor Fusion"],
-                ["CV", "Deep Learning"],
-            ["Deep Learning", "Architectures", "Optimization", "Data Collection", "Deployment"],
+            ["Perception", "Signal Proc.", "CV", "Sensor Fusion", "Deep Learning"],
+                ["Deep Learning", "Architectures", "Optimization", "Data Collection", "Deployment"],
             ["Simulators", "MuJoCo", "Gazebo", "Blender", "Simulink"]
     ];
 
@@ -90,7 +89,38 @@ document.addEventListener('DOMContentLoaded', function() {
             .on("start", dragStarted)
             .on("drag", dragged)
             .on("end", dragEnded));
+    
+    // Helper function to find all descendants (subtree) of a node
+    function getDescendants(nodeId) {
+        const descendants = new Set();
+        const findChildren = (parentId) => {
+            links.forEach(link => {
+                if (link.source.id === parentId) {
+                    descendants.add(link.target.id);
+                    findChildren(link.target.id);  // Recursive search for all children
+                }
+            });
+        };
+        findChildren(nodeId);
+        return descendants;
+    }
 
+    // Hover and highlight function
+    function highlightSubtree(d) {
+        const descendants = getDescendants(d.id);  // Get all descendants of hovered node
+
+        // Highlight the hovered node and its descendants
+        node.selectAll("rect")
+            .attr("fill", n => descendants.has(n.id) || n.id === d.id ? "#FFD700" : levelColors[n.parent || n.id]);  // Highlight in yellow
+    }
+
+    function resetHighlight() {
+        // Reset the highlight when mouse leaves
+        node.selectAll("rect")
+            .attr("fill", n => levelColors[n.parent || n.id]);  // Reset to original color
+    }
+
+    // Apply hover to both rect and text
     node.append("rect")
         .attr("width", d => Math.max(baseWidth * Math.pow(scaleFactor, d.level), minWidth))  // Scale width, with a minimum
         .attr("height", d => Math.max(baseHeight * Math.pow(scaleFactor, d.level), minHeight)) // Scale height, with a minimum
@@ -100,15 +130,21 @@ document.addEventListener('DOMContentLoaded', function() {
         .attr("ry", 10)
         .attr("fill", d => levelColors[d.parent || d.id]) // Use the parent color or self color if it's a parent node
         .attr("stroke", "#000")
-        .attr("stroke-width", 2);
+        .attr("stroke-width", 2)
+        .on("mouseover", function(event, d) { highlightSubtree(d); })
+        .on("mouseout", resetHighlight);
 
+    // Add hover functionality to text as well
     node.append("text")
         .attr("dy", 5)
         .attr("text-anchor", "middle")
         .text(d => d.id)
         .attr("fill", "#000")
-        .style("font-size", d => `${Math.max(baseFontSize * Math.pow(scaleFactor, d.level), minFontSize)}px`);  // Scale font, with a minimum
+        .style("font-size", d => `${Math.max(baseFontSize * Math.pow(scaleFactor, d.level), minFontSize)}px`)
+        .on("mouseover", function(event, d) { highlightSubtree(d); })  // Hover over text
+        .on("mouseout", resetHighlight);  // Reset on mouseout
 
+    
     function ticked() {
         link
             .attr("x1", d => d.source.x)
