@@ -112,10 +112,17 @@ p {
 /* Section Styling */
 .section {
     padding: 4rem 2rem;
-    background-color: #fff;
+    background-color: #f9f9f9;  /* Light gray */
     margin-bottom: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* More depth to the sections */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Sections */
+.section:hover {
+    background-color: #ffffff;  /* Light blue background on hover */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);  /* Slightly stronger shadow on hover */
 }
 
 /* Section Titles */
@@ -191,7 +198,8 @@ button, .button {
 }
 
 button:hover, .button:hover {
-    background-color: #00897b;
+    background-color: #00796b;  /* Darker teal */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Adding shadow on hover */
 }
 
 /* Social Links with Icons */
@@ -335,23 +343,34 @@ button:hover, .button:hover {
     width: 900px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for more depth */
     text-align: center;
     margin-bottom: 20px;
+    background-color: #f0f9ff;  /* Light blue for a fresh look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
 }
 
 .media_card img,
 .media_card video {
     width: 100%;
     height: auto;
-    border-bottom: 2px solid #4db6ac;
+    border-bottom: 3px solid #4db6ac;  /* More pronounced border */
 }
 
 .media_card p {
     padding: 10px;
     font-size: 1.8rem;
     color: #333;
+    background-color: #e0f7fa;  /* Light turquoise background for text */
+    border-top: 3px solid #4db6ac;  /* Matching border for consistency */
 }
+
+/* Hover Effect for Media Cards */
+.media_card:hover {
+    transform: translateY(-10px);  /* Subtle lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* More shadow on hover */
+}
+
 
 /* Skills */
 #skillsGraph {
@@ -365,4 +384,3 @@ button:hover, .button:hover {
     align-items: center;      /* Vertically center the SVG (optional) */
 }
 
-/* Media query for screens smaller than 900px in width */
