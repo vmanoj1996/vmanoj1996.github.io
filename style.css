@@ -353,3 +353,13 @@ button:hover, .button:hover {
     color: #333;
 }
 
+/* Skills */
+#skillsGraph {
+    width: 1000px;
+    height: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid #000; /* Add a solid black border */
+    margin-left: 3rem; /* Add a margin of 3rem to the left */
+}

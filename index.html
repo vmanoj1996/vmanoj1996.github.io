@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="skills_graph.js" defer></script>
 </head>
 
 <body>
@@ -27,7 +30,6 @@
             </div>
         </div>
     </section>
-    
 
     <!-- Experience Section -->
     <section class="section" id="experience">
@@ -58,6 +60,12 @@
                 <img src="./assets/iitm.png" alt="IIT Madras Logo" class="experience_icon">
             </div>
         </div>
+    </section>
+
+    <!-- Skills Graph -->
+    <section class="section" id="skill_section">
+        <h2 class="section_title">My Skill Tree</h2>
+        <div id="skillsGraph"></div>
     </section>
 
 </body>
