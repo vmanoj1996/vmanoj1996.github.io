@@ -2,12 +2,14 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const treeData = [
-        ["Autonomy", "Controls", "Planning", "Perception", "Embedded", "Simulators", "Platforms", "Design Patterns"],
+        ["Autonomy", "Controls", "Planning", "Perception", "Software", "Simulators", "Platforms"],
             ["Platforms", "Mobile Robots", "Fixed-Wing", "Quadrotors", "Spacecraft"],
+            ["Software", "Embedded", "Programming", "Design Patterns"],
             ["Embedded", "Middleware", "Comm. Protocol", "Codegen"],
-                ["Design Patterns", "State Machines", "PubSub", "Producer-consumer", "Super Loop", "Interrupts"],
                 ["Middleware", "PX4", "Ardupilot", "FreeRTOS", "ROS2"],
                 ["Codegen", "Embed. Coder"],
+                ["Design Patterns", "State Machines", "PubSub", "Producer-Consumer", "Super Loop", "Interrupts", "Multi-Threading", "Fork-Join"],
+                ["Programming", "C", "C++", "Python", "Javascript"],
             ["Perception", "Signal Proc.", "CV", "Sensor Fusion", "Deep Learning"],
                 ["Deep Learning", "Architectures", "Data Collection", "Deployment"],
             ["Simulators", "MuJoCo", "Gazebo", "Blender", "Simulink"]
