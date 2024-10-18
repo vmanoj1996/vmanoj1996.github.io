@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elements.forEach(node => assignLevels(node));
 
     // const width = 900, height = 900; // Canvas dimensions
+    window.addEventListener("resize", resizeGraph);
 
     // Calculate container size to determine the initial zoom level
     const container = d3.select("#skillsGraph");
@@ -173,13 +174,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function ticked() {
         link
-            .attr("x1", d => d.source.x)
-            .attr("y1", d => d.source.y)
-            .attr("x2", d => d.target.x)
-            .attr("y2", d => d.target.y);
-
+            .attr("x1", d => clamp(d.source.x, 50, width - 50))
+            .attr("y1", d => clamp(d.source.y, 50, height - 50))
+            .attr("x2", d => clamp(d.target.x, 50, width - 50))
+            .attr("y2", d => clamp(d.target.y, 50, height - 50));
+    
         node
-            .attr("transform", d => `translate(${clamp(d.x, 50, width - 50)}, ${clamp(d.y, 50, height - 50)})`);  // Clamp node positions within canvas
+            .attr("transform", d => `translate(${clamp(d.x, 50, width - 50)}, ${clamp(d.y, 50, height - 50)})`);
+    }
+
+    function resizeGraph() {
+        // Recalculate the container size
+        const containerWidth = container.node().getBoundingClientRect().width;
+        const containerHeight = container.node().getBoundingClientRect().height;
+    
+        // Update the width and height of the SVG
+        svg.attr("width", containerWidth)
+           .attr("height", containerHeight);
+    
+        // Update the simulation center force
+        simulation.force("center", d3.forceCenter(containerWidth / 2, containerHeight / 2)).restart();
+        simulation.alpha(1).restart();
     }
 
     // Clamp function to restrict node positions within canvas bounds
