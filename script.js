@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="logo">Manoj Velmurugan</div>
         <ul class="nav_links" id="nav_links">
             <li><a href="index.html">Home</a></li>
-            
+            <li><a href="tech_odyssey.html">My Tech Odyssey</a></li>
             <li><a href="media.html">Media</a></li>
             <li><a href="publications.html">Publications</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -49,4 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active'); // Add 'active' class to the matching link
         }
     });
+});
+
+// tech odyssey
+// Function to toggle visibility of content
+function toggleContent(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section.style.display === "none" || section.style.display === "") {
+        section.style.display = "block";  // Expand section
+    } else {
+        section.style.display = "none";   // Collapse section
+    }
+}
+
+// On page load, make sure all sections are expanded
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.content');
+    sections.forEach(section => section.style.display = 'block');
 });

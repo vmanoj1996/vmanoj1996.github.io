@@ -384,3 +384,33 @@ button:hover, .button:hover {
     align-items: center;      /* Vertically center the SVG (optional) */
 }
 
+/* Tech odyssey disappear */
+
+.toggle {
+    cursor: pointer;
+}
+
+.toggle::after {
+    content: " ▼";  /* Add caret icon */
+}
+
+.content {
+    transition: max-height 0.3s ease-out;
+}
+
+/* Right-align organization name next to project title */
+.org_year {
+    float: right;
+    text-align: right;
+}
+
+.org_name,
+.year_tag {
+    color: #655e5e;  /* Subtle, neutral color */
+    font-weight: normal;
+    margin-left: 5px; /* Space between org and year */
+}
+
+.year_tag {
+    font-weight: normal;  /* Keep the year bold for contrast */
+}

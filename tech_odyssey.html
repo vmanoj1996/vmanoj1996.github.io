@@ -5,29 +5,68 @@
     <meta charset="UTF-8">
     <title>My Tech Odyssey</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <section id="tech_odyssey" class="section">
         <h2 class="section_title">My Tech Odyssey</h2>
         <div id="tech_odyssey_content">
+
             <div class="project_card">
-                <h3>Project 1: Mars Drone</h3>
-                <p>Working on controller design for the Mars MAV Technology Demonstrator project funded by ISRO. Proposed a flap-controlled twin-rotor design to reduce mechanical complexity.</p>
-                <div class="video_placeholder">[Video Placeholder]</div>
+                <h3 class="class_title toggle" onclick="toggleContent('cv_section')">
+                    Computer Vision / Deep Learning
+                </h3>
+                <div id="cv_section" class="content">
+                    <h4 class="project_title">
+                        Window Segmentation in Synthetic Data
+                        <div class="org_year">
+                            <span class="org_name">Worcester Polytechnic Institute</span>
+                            <span class="year_tag">2023</span>
+                        </div>
+                    </h4>
+                    <p>Developed a CNN model for window segmentation using synthetic data for a perception course. Implemented various data augmentation techniques to improve model robustness.</p>
+                    <p><strong>Funding Source:</strong> WPI Perception Lab Grant</p>
+                    <div class="video_placeholder">[Video Placeholder]</div>
+                </div>
             </div>
+
             <div class="project_card">
-                <h3>Project 2: Flight Control Board</h3>
-                <p>Developed an indigenous Mbed-based flight controller for indoor position control. Awarded a grant of 1.85 Lakhs INR by IC&SR under Innovative Projects category.</p>
-                <div class="video_placeholder">[Video Placeholder]</div>
+                <h3 class="class_title toggle" onclick="toggleContent('uavs_section')">
+                    Unmanned Aerial Vehicles (UAV)
+                </h3>
+                <div id="uavs_section" class="content">
+                    <h4 class="project_title">
+                        Mars Drone
+                        <div class="org_year">
+                            <span class="org_name">Indian Institute of Technology Madras</span>
+                            <span class="year_tag">2018</span>
+                        </div>
+                    </h4>
+                    <p>Worked on controller design for the Mars MAV Technology Demonstrator, proposing a flap-controlled twin-rotor design.</p>
+                    <p><strong>Funding Source:</strong> ISRO Mars Exploration Fund</p>
+                    <div class="video_placeholder">[Video Placeholder]</div>
+                </div>
             </div>
+
             <div class="project_card">
-                <h3>Project 3: Solar Plane</h3>
-                <p>Fabricated the first solar-powered airplane at IIT Madras, achieving a 40% reduction in battery weight.</p>
-                <div class="video_placeholder">[Video Placeholder]</div>
+                <h3 class="class_title toggle" onclick="toggleContent('physics_section')">
+                    Physics Engines
+                </h3>
+                <div id="physics_section" class="content">
+                    <h4 class="project_title">
+                        UAV Dynamics in MuJoCo
+                        <div class="org_year">
+                            <span class="org_name">Worcester Polytechnic Institute</span>
+                            <span class="year_tag">2022</span>
+                        </div>
+                    </h4>
+                    <p>Simulated UAV dynamics and control strategies in MuJoCo for real-time testing of autonomous flight algorithms.</p>
+                    <p><strong>Funding Source:</strong> WPI Robotics Lab Fund</p>
+                    <div class="video_placeholder">[Video Placeholder]</div>
+                </div>
             </div>
+
         </div>
     </section>
-
-<script src="script.js" defer></script>
 </body>
 </html>
