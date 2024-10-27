@@ -294,7 +294,7 @@ button:hover, .button:hover {
     flex: 1;
     padding-right: 2.5rem;
     margin-left: 3rem;
-    max-width: 65%; /* Limit text width to balance with the image */
+    max-width: 100%; /* Limit text width to balance with the image */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center the text */
