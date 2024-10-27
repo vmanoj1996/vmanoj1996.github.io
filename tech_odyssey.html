@@ -9,21 +9,20 @@
 </head>
 <body>
     <section id="tech_odyssey" class="section">
-        <h2 class="section_title">My Tech Odyssey</h2>
         <div id="tech_odyssey_content">
 
             <div class="project_card">
-                <h3 class="class_title toggle" onclick="toggleContent('cv_section')">
+                <h1 class="class_title toggle" onclick="toggleContent('cv_section')">
                     Computer Vision / Deep Learning
-                </h3>
+                </h1>
                 <div id="cv_section" class="content">
-                    <h4 class="project_title">
+                    <h3 class="project_title">
                         Window Segmentation in Synthetic Data
                         <div class="org_year">
                             <span class="org_name">Worcester Polytechnic Institute</span>
                             <span class="year_tag">2023</span>
                         </div>
-                    </h4>
+                    </h3>
                     <p>Developed a CNN model for window segmentation using synthetic data for a perception course. Implemented various data augmentation techniques to improve model robustness.</p>
                     <p><strong>Funding Source:</strong> WPI Perception Lab Grant</p>
                     <div class="video_placeholder">[Video Placeholder]</div>
@@ -31,39 +30,87 @@
             </div>
 
             <div class="project_card">
-                <h3 class="class_title toggle" onclick="toggleContent('uavs_section')">
+                <h1 class="class_title toggle" onclick="toggleContent('uavs_section')">
                     Unmanned Aerial Vehicles (UAV)
-                </h3>
+                </h1>
                 <div id="uavs_section" class="content">
-                    <h4 class="project_title">
+                    <h3 class="project_title">
                         Mars Drone
                         <div class="org_year">
                             <span class="org_name">Indian Institute of Technology Madras</span>
                             <span class="year_tag">2018</span>
                         </div>
-                    </h4>
+                    </h3>
                     <p>Worked on controller design for the Mars MAV Technology Demonstrator, proposing a flap-controlled twin-rotor design.</p>
                     <p><strong>Funding Source:</strong> ISRO Mars Exploration Fund</p>
                     <div class="video_placeholder">[Video Placeholder]</div>
                 </div>
             </div>
 
-            <div class="project_card">
-                <h3 class="class_title toggle" onclick="toggleContent('physics_section')">
+            <div class="project_card toggle" onclick="toggleContent('physics_section')">
+                <h1 class="class_title">
                     Physics Engines
-                </h3>
+                </h1>
+                <!-- content 1 -->
                 <div id="physics_section" class="content">
-                    <h4 class="project_title">
-                        UAV Dynamics in MuJoCo
+                    <h2 class="project_title">
+                        MuJoCo Simulink Blockset
+                        <div class="org_year">
+                            <span class="org_name">MathWorks</span>
+                            <span class="year_tag">2022-2023</span>
+                        </div>
+                    </h2>
+                    <p>Developed a Simulink Blockset for the MuJoCo simulator, enabling high-performance robot simulation and autonomous algorithm development within Simulink. The blockset uses C++ MEX S-Functions to interface directly with the MuJoCo API, providing real-time access to actuators and sensors, along with camera rendering within Simulink.</p>
+                    <div class="video_placeholder">
+                        <iframe width="900" height="506" src="https://www.youtube.com/embed/wVSQ-lmArJY?rel=0&vq=hd1080" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://github.com/mathworks-robotics/mujoco-simulink-blockset" target="_blank">Visit the project page</a>
+                    </div>
+                </div>
+                <!-- content 2 -->
+                <div id="physics_section" class="content">
+                    <h2 class="project_title">
+                        VEX Mobile Robot Simulation in Gazebo
+                        <div class="org_year">
+                            <span class="org_name">MathWorks</span>
+                            <span class="year_tag">2020-2021</span>
+                        </div>
+                    </h2>
+                    <p>Developed realistic models of VEX Mobile Robot in Gazebo, including mechanisms like skid steer drive, grippers, four-bar linkages, and gears. The work involved exact CAD modeling and setting up critical parameters such as inertia, friction, and stiffness coefficients. The Gazebo model was then interfaced with Simulink using the Robotics System Toolbox for seamless integration.</p>
+                    <div class="video_placeholder">
+                        <img src="https://www.mathworks.com/help/rtw/vexv5/ug/vexv5_pick_place.gif" alt="VEX Robot Pick and Place Animation" width="900" height="auto" />
+                    </div>
+                
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://www.mathworks.com/help/rtw/vexv5/ug/simulate-vex-simulink-gazebo.html" target="_blank">Visit the project page</a>
+                    </div>
+                </div>
+
+                <!-- content 3 -->
+                <div id="physics_section" class="content">
+                    <h2 class="project_title">
+                        Vision-Centric Quadrotor Simulator in Blender
                         <div class="org_year">
                             <span class="org_name">Worcester Polytechnic Institute</span>
-                            <span class="year_tag">2022</span>
+                            <span class="year_tag">2023</span>
                         </div>
-                    </h4>
-                    <p>Simulated UAV dynamics and control strategies in MuJoCo for real-time testing of autonomous flight algorithms.</p>
-                    <p><strong>Funding Source:</strong> WPI Robotics Lab Fund</p>
-                    <div class="video_placeholder">[Video Placeholder]</div>
+                    </h2>
+                    <p>Blender is excellent for simulating vision systems like cameras and depth sensors, but lacks built-in dynamics for accurate UAV simulation. To overcome this, I rewrote the quadrotor physics and controllers from scratch in Python and integrated them with Blender using its Python scripting APIs. The simulator was used in motion planning assignments for the Aerial Robotics course at WPI. I was responsible for implementing the dynamics, control systems, state machines, and API integration. Camera rendering was done in collaboration with Siyuan Huang (MS WPI).</p>
+                    <div class="video_placeholder">
+                        <img src="https://dl.dropbox.com/scl/fi/zvynn0qfaxhd269vusypu/BlenderQuadrotor.jpg?rlkey=pvjbpk4jjmk9xinxzh1efo7vf&st=f8o8391l&dl=0" alt="Blender Quadrotor Simulation" width="900" height="auto" />
+                    </div>
+                
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://rbe549.github.io/rbe595/fall2023/proj/p0/" target="_blank">Visit the course page</a>
+                    </div>
                 </div>
+                
+
             </div>
 
         </div>

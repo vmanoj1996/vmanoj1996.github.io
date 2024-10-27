@@ -414,3 +414,13 @@ button:hover, .button:hover {
 .year_tag {
     font-weight: normal;  /* Keep the year bold for contrast */
 }
+
+.video_placeholder {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; /* Optional: add some spacing above */
+}
+
+.class_title {
+    text-align: center;
+}
