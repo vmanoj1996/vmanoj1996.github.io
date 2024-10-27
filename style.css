@@ -384,3 +384,65 @@ button:hover, .button:hover {
     align-items: center;      /* Vertically center the SVG (optional) */
 }
 
+/* Tech odyssey disappear */
+
+.toggle {
+    cursor: pointer;
+}
+
+.content {
+    transition: max-height 0.3s ease-out;
+}
+
+/* Right-align organization name next to project title */
+.org_year {
+    float: right;
+    text-align: right;
+}
+
+.org_name,
+.year_tag {
+    color: #655e5e;  /* Subtle, neutral color */
+    font-weight: normal;
+    margin-left: 5px; /* Space between org and year */
+}
+
+.year_tag {
+    font-weight: normal;  /* Keep the year bold for contrast */
+}
+
+.video_placeholder {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; /* Optional: add some spacing above */
+}
+
+.class_title {
+    text-align: center;
+}
+
+.project_class {
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9; /* Very light grey background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners for a smoother look */
+}
+
+
+.class_title {
+    font-size: 1.8rem; /* Larger title for emphasis */
+    color: #333; /* Dark grey color for text */
+    padding-bottom: 10px; /* Space below the title */
+    border-bottom: 1px solid #ddd; /* Subtle line under the title */
+    margin-bottom: 15px; /* Space after the title line */
+}
+
+.content::after {
+    content: '';
+    display: block;
+    border-top: 2px solid #ddd; /* Light gray divider line */
+    margin: 30px auto; /* Spacing before and after the divider */
+    width: 100%; /* Optional: make it not extend the full width */
+}
