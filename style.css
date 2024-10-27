@@ -420,3 +420,20 @@ button:hover, .button:hover {
 .class_title {
     text-align: center;
 }
+
+.project_class {
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9; /* Very light grey background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners for a smoother look */
+}
+
+.class_title {
+    font-size: 1.8rem; /* Larger title for emphasis */
+    color: #333; /* Dark grey color for text */
+    padding-bottom: 10px; /* Space below the title */
+    border-bottom: 1px solid #ddd; /* Subtle line under the title */
+    margin-bottom: 15px; /* Space after the title line */
+}

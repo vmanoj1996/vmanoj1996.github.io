@@ -18,12 +18,41 @@
                 
             </div>
 
-            <div class="project_class">
-                <h1 class="class_title toggle" onclick="toggleContent('uavs_section')">
+            <div class="project_class toggle" data-target="uav" onclick="toggleContent()">
+                <h1 class="class_title">
                     Unmanned Aerial Vehicles (UAV)
                 </h1>
+                <!-- content 1 -->
+                <div id="class_section" class="content">
+                    <h2 class="project_title">
+                        PX4 Hardware-in-the-Loop (HITL) Simulation with Fixed-Wing Plant in Simulink
+                        <div class="org_year">
+                            <span class="org_name">MathWorks</span>
+                            <span class="year_tag">2022</span>
+                        </div>
+                    </h2>
+                    <p>I developed a Simulink and Stateflow model for flight mode management, guidance, and control of a fixed-wing UAV. The custom controller model integrates into the PX4 stack, enabling seamless flight operations. An L1 guidance scheme was used for path tracking, while a cascaded PID controller architecture, inspired by PX4 and Mariano Lizarraga's PhD thesis, was employed for control. <br>I formulated a cascaded control structure to control the following states:</p>
+                        <ul>
+                            <li>Airspeed</li>
+                            <li>Altitude & climb rate</li>
+                            <li>Course</li>
+                            <li>Attitude & angular rate</li>
+                        </ul>
+                        <p>Using Embedded Coder, the controller is automatically generated and deployed onto a PX4 Autopilot Pixhawk board. The deployed code is rigorously tested in a Hardware-in-the-Loop (HIL) setup, with the Simulink-based plant model running on a PC or a Speedgoat real-time target computer to ensure accurate and reliable performance. <br>Credits: The plant dynamics model mostly was modified/adopted from Mariano Lizarraga's PhD work.</p>
+
+                    <div class="video_placeholder">
+                        <img src="https://dl.dropbox.com/scl/fi/kwxxlrre55nha3ic6zlmn/stateflow_fixedWing.png?rlkey=swgqjf3oehdp1zbvqdx517q1t&st=xrh574rt&dl=0" 
+                        alt="Stateflow Fixed Wing Controller" style="width: 100%; max-width: 1100px;">
+                    </div>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://www.mathworks.com/help/uav/px4/ug/px4-fixed-wing-architecture.html" target="_blank">Visit the project page</a>
+                    </div>
+                </div>
                 
+            
             </div>
+
+            <!-- CLASS PHYSICS ENGINES -->
 
             <div class="project_class toggle" data-target="physics" onclick="toggleContent()">
                 <h1 class="class_title">
