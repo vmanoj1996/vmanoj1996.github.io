@@ -524,3 +524,28 @@ button:hover, .button:hover {
     width: 100%;
     height: 100%;
 }
+
+
+/* Coursework Section Styling */
+.coursework_category {
+    margin-bottom: 20px;
+}
+
+.coursework_category h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Coursework List Styling */
+.coursework_list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.coursework_list li {
+    margin-bottom: 0.5rem;
+    color: #333; /* Adjust color for readability */
+}
