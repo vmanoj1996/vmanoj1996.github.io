@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="logo">Manoj Velmurugan</div>
         <ul class="nav_links" id="nav_links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="tech_odyssey.html">My Tech Odyssey</a></li>
-            <li><a href="media.html">Media</a></li>
+            <li><a href="tech_odyssey.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
             <li><a href="publications.html">Publications</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </nav>`;
     // <li><a href="tech_odyssey.html">My Tech Odyssey</a></li>
+    // <li><a href="media.html">Media</a></li>
 
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
 
@@ -50,3 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+

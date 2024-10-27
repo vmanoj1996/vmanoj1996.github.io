@@ -443,6 +443,54 @@ button:hover, .button:hover {
     content: '';
     display: block;
     border-top: 2px solid #ddd; /* Light gray divider line */
-    margin: 30px auto; /* Spacing before and after the divider */
+    margin: 45px auto; /* Spacing before and after the divider */
     width: 100%; /* Optional: make it not extend the full width */
+}
+
+.slideshow {
+    position: relative;
+    max-width: 900px; /* This restricts the maximum width */
+    height: 800px; /* Fixed height matching typical 16:9 aspect ratio videos */
+    margin: auto;
+    overflow: hidden;
+}
+
+.media_card {
+    display: flex;
+    align-items: below; /* Align items vertically in the center */
+    justify-content: center; /* Center content horizontally */
+    height: 100%; /* Ensure card uses full height of the slideshow */
+    width: 100%; /* Ensure card uses full width of the slideshow */
+}
+
+.media_card img, .media_card video {
+    max-height: 100%; /* Max height is the full height of the container */
+    max-width: 100%; /* Max width is the full width of the container */
+    object-fit: contain; /* Prevent distortion, maintain aspect ratio */
+}
+
+.slide-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Ensure arrows are centered vertically */
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.left-arrow {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.right-arrow {
+    right: 0;
+    border-radius: 0 3px 3px 0;
 }

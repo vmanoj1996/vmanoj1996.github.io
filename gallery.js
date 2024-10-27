@@ -70,3 +70,68 @@ function loadGallery() {
 
 // Load the gallery on page load
 document.addEventListener('DOMContentLoaded', loadGallery);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadSlideshow();
+    showSlides(1);  // Start showing the first slide
+});
+
+function loadSlideshow() {
+    const mediaContent = document.getElementById('slideshow_content');
+    mediaItems.forEach((item, index) => {
+        const mediaCard = document.createElement('div');
+        mediaCard.className = 'media_card';
+        mediaCard.style.display = 'none';  // All slides hidden by default
+
+        if (item.type === 'image') {
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.alt = item.caption;
+            mediaCard.appendChild(img);
+        } else if (item.type === 'video') {
+            const video = document.createElement('video');
+            video.controls = true;
+            const source = document.createElement('source');
+            source.src = item.src;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+            mediaCard.appendChild(video);
+        }
+        else if (item.type === 'iframe')
+        {
+            const iframe = document.createElement('iframe');
+            iframe.width = '900';
+            iframe.height = '506';
+            iframe.src = item.src;  // Assuming item.src contains the YouTube embed link
+            iframe.title = 'YouTube video player';
+            iframe.frameBorder = '0';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            iframe.allowFullscreen = true;
+            iframe.referrerPolicy = 'no-referrer';
+            mediaCard.appendChild(iframe);
+        }
+
+        const caption = document.createElement('p');
+        caption.textContent = item.caption;
+        mediaCard.appendChild(caption);
+
+        mediaContent.appendChild(mediaCard);
+    });
+}
+
+let slideIndex = 1;
+
+function moveSlide(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("media_card");
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+}

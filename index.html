@@ -6,13 +6,15 @@
     <!-- <title>Manoj Velmurugan</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="skills_graph.js" defer></script>
+    <script defer src="gallery.js"></script>
+    <script defer src="script.js"></script>
+    
 </head>
 
 <body>
+    
+
     <!-- Home Section -->
     <section id="home" class="home_section">
         <div class="intro_container">
@@ -31,9 +33,18 @@
         </div>
     </section>
 
+    <!-- Slideshow Gallery Section -->
+    <section id="media" class="section">
+        <div id="slideshow_content" class="media_gallery slideshow">
+            <!-- Slideshow items will be injected here by JavaScript -->
+        </div>
+        <button class="slide-arrow left-arrow" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slide-arrow right-arrow" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+
     <!-- Experience Section -->
     <section class="section" id="experience">
-        <h2 class="section_title">My Tech Odyssey</h2>
+        <h2 class="section_title">Organizations</h2>
         <div class="experience_container">
             <div class="experience_card">
                 <h2>PhD Student</h2>
@@ -62,11 +73,7 @@
         </div>
     </section>
 
-    <!-- Skills Graph -->
-    <section class="section" id="skill_section">
-        <h2 class="section_title">My Skill Tree</h2>
-        <div id="skillsGraph"></div>
-    </section>
+    
 
 </body>
 </html>
