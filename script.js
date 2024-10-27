@@ -52,4 +52,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// image make it dynamically zoom in
+document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('.dynamic-image');
+    images.forEach(function(image) {
+        var viewer;
+
+        image.addEventListener('dblclick', function() {
+            if (!viewer) {
+                viewer = new Viewer(image, {
+                    hidden: function() {
+                        viewer.destroy(); // Ensure the viewer is properly destroyed after closing
+                        viewer = null;   // Reset the viewer to null to reinitialize next time
+                    },
+                    navbar: false, // Customize this as needed
+                    toolbar: {
+                        zoomIn: 1,
+                        zoomOut: 1,
+                        oneToOne: 1,
+                        reset: 1,
+                        prev: 0,
+                        play: {
+                            show: 0,
+                            size: 'large',
+                        },
+                        next: 0,
+                        rotateLeft: 1,
+                        rotateRight: 1,
+                        flipHorizontal: 1,
+                        flipVertical: 1,
+                    },
+                });
+            }
+            viewer.show();
+        });
+    });
+});
+
 
