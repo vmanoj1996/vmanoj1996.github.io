@@ -22,6 +22,7 @@
                 <h1 class="class_title">
                     Unmanned Aerial Vehicles (UAV)
                 </h1>
+
                 <!-- content 1 -->
                 <div id="class_section" class="content">
                     <h2 class="project_title">
@@ -46,6 +47,110 @@
                     </div>
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://www.mathworks.com/help/uav/px4/ug/px4-fixed-wing-architecture.html" target="_blank">Visit the project page</a>
+                    </div>
+                </div>
+                
+                <!-- content 2 -->
+                <div id="class_section" class="content">
+                    <h2 class="project_title">
+                        PX4 Hardware-in-the-Loop (HITL) Simulation with Quadrotor Plant in Simulink
+                        <div class="org_year">
+                            <span class="org_name">MathWorks</span>
+                            <span class="year_tag">2020-2022</span>
+                        </div>
+                    </h2>
+                    <p>Contributed significantly to the development of a key example in the UAV Toolbox support package for PX4 Autopilots. This example showcases the process of designing controllers for PX4-based autopilots for quadrotors and validating them using a Simulink-based plant model. My work focused on:</p>
+                        <ul>
+                            <li>Developing the plant dynamics model</li>
+                            <li>Designing the controller model, position controllers to angular rate controllers</li>
+                            <li>Implementing portions of the sensor simulation</li>
+                        </ul>
+                        <p>The controller was deployed and tested in a Hardware-in-the-Loop (HIL) configuration, with the Simulink plant model executed on a PC or a Speedgoat real-time target computer to ensure robust validation of the UAV's control system.</p>
+
+                    <!-- <div class="video_placeholder">
+                        <img src="https://dl.dropbox.com/scl/fi/qdjc1fz8rwh1y0d9m06tv/hitlQuad.png?rlkey=n90e059fgw6anpyre83bkhbk2&st=ka7hw0ut&dl=0" 
+                        alt="HITL Quadrotor Simulation" style="width: 100%; max-width: 1100px;">
+                    </div> -->
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://www.mathworks.com/help/uav/px4/ref/hitl-simulink-plant-example.html" target="_blank">Visit the project page</a>
+                    </div>
+                </div>
+
+                <!-- content 3 -->
+                <div id="class_section" class="content">
+                    <h2 class="project_title">
+                        Controllers and Estimators for Parrot Minidrone
+                        <div class="org_year">
+                            <span class="org_name">MathWorks</span>
+                            <span class="year_tag">2019-2020</span>
+                        </div>
+                    </h2>
+                    <p>Enhanced the Parrot Minidrone example and addressed issues with the IMU temperature-induced bias, which caused significant errors in attitude and position estimates. Key improvements included:</p>
+                    <ul>
+                        <li>Replacing the complementary filter with a linear Kalman Filter (KF) for roll and pitch estimation, incorporating gyro bias as a state.</li>
+                        <li>Adding accelerometer bias as a state in the existing velocity KF for x and y directions.</li>
+                        <li>Redesigning the control architecture from a position PID → attitude PID loop to a cascaded structure: position P → velocity PI → attitude P → angular velocity PID control loops, improving stability and performance.</li>
+                        <li>Revising the dynamics, control, and estimator model equations to fix errors in the original formulation.</li>
+                    </ul>
+                    <p>These modifications resulted in a significant reduction in position drift, from 1 meter to less than 20 cm during a 1-minute flight, and enhanced the controller's responsiveness to disturbances.</p>
+                    <div class="video_placeholder">
+                        <video height="300px" controls>
+                            <source src="https://dl.dropbox.com/scl/fi/u7x4h8rox5n851m95j0ol/parrotMamboTrimmed.mp4?rlkey=7phu4hvjdd5bge95qjr8rxhln&st=3wdlfx0d&dl=0" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://www.mathworks.com/help/simulink/supportpkg/parrot_ug/fly-a-parrot-minidrone-using-the-hover-simulink-model.html" target="_blank">Visit the project page</a>
+                    </div>
+                </div>
+
+                <!-- content4 -->
+                <div id="class_section" class="content">
+                    <h2 class="project_title">
+                        In-House Autopilot for an Indoor Quadcopter
+                        <div class="org_year">
+                            <span class="org_name">RAFT Lab, IIT Madras</span>
+                            <span class="year_tag">2016-2019</span>
+                        </div>
+                    </h2>
+                    <p>Developed a custom Arm Mbed-based autopilot system for controlling an indoor quadrotor autonomously. 
+                        Highlights include:</p>
+                    <ul>
+                        <li>Engineered multi-loop PID controls with derivative filtering and integral anti-windup, optimizing for a critically damped response and a 0.5-0.8 s settling time.</li>
+                        <li>Implemented a complementary filter for pitch, roll, and downward velocity, alongside a linear Kalman Filter for lateral velocities, factoring in accelerometer bias and optical flow data.</li>
+                        <li>Derived a realistic quadcopter dynamics model through empirical research on inertia, motor, and propeller characteristics.</li>
+                        <li>Authored extensive C++ codebase and designed a custom PCB for sensor interfacing on the ST-Nucleo board.</li>
+                        <li>Presented findings at the Indian Control Conference 2019, IIT Delhi, fostering academic and practical applications in aerial robotics.</li>
+                    </ul>
+                    <p>This project led to robust flight performance and practical educational tools for peers, significantly advancing the capabilities of indoor UAVs.</p>
+                    <div class="video_placeholder">
+                        <img src="https://dl.dropbox.com/scl/fi/jeyuhesmjy2yaknsvq7wh/fcb.jpg?rlkey=u9w6k4h9ec5db4jfpaht3mn2i&st=sf0upwze&dl=0" alt="Flight Control Board" width="90%">
+                    </div>
+                    <div class="video_placeholder">
+                        <iframe width="90%" height="500" src="https://www.youtube.com/embed/Bq1ETXIEwg4?si=bCtAYyG3gjrBHwkq?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://raftlab.iitm.ac.in/" target="_blank">Visit the project page</a>
+                    </div>
+                </div>
+                
+                <!-- content 5 -->
+                <div id="class_section" class="content">
+                    <h2 class="project_title">
+                        First Solar-Powered Airplane of IIT Madras
+                        <div class="org_year">
+                            <span class="org_name">RAFT Lab, IIT Madras</span>
+                            <span class="year_tag">2017</span>
+                        </div>
+                    </h2>
+                    <p>As part of a team of five students at IIT Madras, we developed the institute's first solar-powered airplane that successfully taxied under its own power. I designed and fabricated a solar cell array and battery pack, managed the electrical subsystem, and contributed to the aerodynamic design, ensuring the aircraft's operational efficiency. The airplane, with a 3-meter wingspan and equipped with 52 SunPower C60 cells, demonstrated the effectiveness of our solar power design.</p>
+
+
+                    <div class="video_placeholder">
+                        <img src="https://dl.dropbox.com/scl/fi/hidwy1kckhfbw8f90he2w/solar_airplane.jpg?rlkey=qgevz0y8z1fve0u49gp00wbrq&st=zgm2j813&dl=0" alt="Solar-Powered Airplane" width="90%">
+                    </div>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://raftlab.iitm.ac.in/" target="_blank">Visit the project page</a>
                     </div>
                 </div>
                 

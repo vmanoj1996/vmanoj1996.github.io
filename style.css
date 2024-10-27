@@ -430,10 +430,19 @@ button:hover, .button:hover {
     border-radius: 8px; /* Rounded corners for a smoother look */
 }
 
+
 .class_title {
     font-size: 1.8rem; /* Larger title for emphasis */
     color: #333; /* Dark grey color for text */
     padding-bottom: 10px; /* Space below the title */
     border-bottom: 1px solid #ddd; /* Subtle line under the title */
     margin-bottom: 15px; /* Space after the title line */
+}
+
+.content::after {
+    content: '';
+    display: block;
+    border-top: 2px solid #ddd; /* Light gray divider line */
+    margin: 30px auto; /* Spacing before and after the divider */
+    width: 100%; /* Optional: make it not extend the full width */
 }
