@@ -30,12 +30,13 @@
                     </h2>
                     <p>Autonomous aerial robots are becoming commonplace in our lives. Hands-on aerial robotics courses are pivotal in training the next-generation workforce to meet the growing market demands. Such an efficient and compelling course depends on a reliable testbed. In this paper, we present VizFlyt, an open-source perception-centric Hardware-In-The-Loop (HITL) photorealistic testing framework for aerial robotics courses. We utilize pose from an external localization system to hallucinate real-time and photorealistic visual sensors using 3D Gaussian Splatting. This enables stress-free testing of autonomy algorithms on aerial robots without the risk of crashing into obstacles. We achieve over 100Hz of system update rate. Lastly, we build upon our past experiences of offering hands-on aerial robotics courses and propose a new open-source and open-hardware curriculum based on VizFlyt for the future. We test our framework on various course projects in real-world HITL experiments and present the results showing the efficacy of such a system and its large potential use cases.</p>
                     <p>M. Velmurugan*, K. Srivastava*, R. Kulkarni*, and N. J. Sanket, "VizFlyt: Perception-centric Pedagogical Framework For Autonomous Aerial Robots," submitted to ICRA 2025 (under review, * means equal contribution).</p>
+
                     <div class="video_placeholder">
-                        <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" width="900" height="auto">
-                            <source src="https://dl.dropbox.com/scl/fi/z81u4lgbs0cqcs0z4r4qm/viz_flyt_Sequence-01_7.mp4?rlkey=4j08r8fbpa6pytt8pp2dre2e2&st=dhk5z8k6&dl=0" type="video/mp4">
-                            Your browser does not support the video tag.
+                        <video id="my-video" class="video-js" controls preload="auto" width="900" height="auto" data-setup="{}">
+                            <source src="https://dl.dropbox.com/scl/fi/z81u4lgbs0cqcs0z4r4qm/viz_flyt_Sequence-01_7.mp4?rlkey=4j08r8fbpa6pytt8pp2dre2e2&st=dhk5z8k6&dl=0" type="video/mp4" />
                         </video>
                     </div>
+                        
 
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://pear.wpi.edu/research/vizflyt.html" target="_blank">Visit the project page</a>
@@ -68,8 +69,7 @@
                         <p>Using Embedded Coder, the controller is automatically generated and deployed onto a PX4 Autopilot Pixhawk board. The deployed code is rigorously tested in a Hardware-in-the-Loop (HIL) setup, with the Simulink-based plant model running on a PC or a Speedgoat real-time target computer to ensure accurate and reliable performance. <br>Credits: The plant dynamics model mostly was modified/adopted from Mariano Lizarraga's PhD work.</p>
 
                     <div class="video_placeholder">
-                        <img src="https://dl.dropbox.com/scl/fi/kwxxlrre55nha3ic6zlmn/stateflow_fixedWing.png?rlkey=swgqjf3oehdp1zbvqdx517q1t&st=xrh574rt&dl=0" 
-                        alt="Stateflow Fixed Wing Controller" style="width: 100%; max-width: 1100px;">
+                        <img src="https://dl.dropbox.com/scl/fi/kwxxlrre55nha3ic6zlmn/stateflow_fixedWing.png?rlkey=swgqjf3oehdp1zbvqdx517q1t&st=xrh574rt&dl=0" alt="Stateflow Fixed Wing Controller" style="width: 900px;">
                     </div>
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://www.mathworks.com/help/uav/px4/ug/px4-fixed-wing-architecture.html" target="_blank">Visit the project page</a>
@@ -119,12 +119,13 @@
                         <li>Revising the dynamics, control, and estimator model equations to fix errors in the original formulation.</li>
                     </ul>
                     <p>These modifications resulted in a significant reduction in position drift, from 1 meter to less than 20 cm during a 1-minute flight, and enhanced the controller's responsiveness to disturbances.</p>
+
                     <div class="video_placeholder">
-                        <video height="300px" controls>
-                            <source src="https://dl.dropbox.com/scl/fi/u7x4h8rox5n851m95j0ol/parrotMamboTrimmed.mp4?rlkey=7phu4hvjdd5bge95qjr8rxhln&st=3wdlfx0d&dl=0" type="video/mp4">
-                            Your browser does not support the video tag.
+                        <video id="my-video" class="video-js" controls preload="auto" max-width="400" height="auto" data-setup="{}" poster="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/63318/versions/6/screenshot.png">
+                            <source src="https://dl.dropbox.com/scl/fi/u7x4h8rox5n851m95j0ol/parrotMamboTrimmed.mp4?rlkey=7phu4hvjdd5bge95qjr8rxhln&st=3wdlfx0d&dl=0" type="video/mp4" />
                         </video>
                     </div>
+
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://www.mathworks.com/help/simulink/supportpkg/parrot_ug/fly-a-parrot-minidrone-using-the-hover-simulink-model.html" target="_blank">Visit the project page</a>
                     </div>
@@ -150,10 +151,11 @@
                     </ul>
                     <p>This project led to robust flight performance and practical educational tools for peers, significantly advancing the capabilities of indoor UAVs.</p>
                     <div class="video_placeholder">
-                        <img src="https://dl.dropbox.com/scl/fi/jeyuhesmjy2yaknsvq7wh/fcb.jpg?rlkey=u9w6k4h9ec5db4jfpaht3mn2i&st=sf0upwze&dl=0" alt="Flight Control Board" width="90%">
+                        <img src="https://dl.dropbox.com/scl/fi/jeyuhesmjy2yaknsvq7wh/fcb.jpg?rlkey=u9w6k4h9ec5db4jfpaht3mn2i&st=sf0upwze&dl=0" alt="Flight Control Board" max-width="900px" >
                     </div>
                     <div class="video_placeholder">
-                        <iframe width="90%" height="500" src="https://www.youtube.com/embed/Bq1ETXIEwg4?si=bCtAYyG3gjrBHwkq?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="900px" height="506
+                        " src="https://www.youtube.com/embed/Bq1ETXIEwg4?si=bCtAYyG3gjrBHwkq?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://raftlab.iitm.ac.in/" target="_blank">Visit the project page</a>
@@ -173,7 +175,7 @@
 
 
                     <div class="video_placeholder">
-                        <img src="https://dl.dropbox.com/scl/fi/hidwy1kckhfbw8f90he2w/solar_airplane.jpg?rlkey=qgevz0y8z1fve0u49gp00wbrq&st=zgm2j813&dl=0" alt="Solar-Powered Airplane" width="90%">
+                        <img width="900px" height="auto" src="https://dl.dropbox.com/scl/fi/hidwy1kckhfbw8f90he2w/solar_airplane.jpg?rlkey=qgevz0y8z1fve0u49gp00wbrq&st=zgm2j813&dl=0" alt="Solar-Powered Airplane" >
                     </div>
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://raftlab.iitm.ac.in/" target="_blank">Visit the project page</a>
@@ -240,7 +242,7 @@
                     </h2>
                     <p>Blender is excellent for simulating vision systems like cameras and depth sensors, but lacks built-in dynamics for accurate UAV simulation. To overcome this, I rewrote the quadrotor physics and controllers from scratch in Python and integrated them with Blender using its Python scripting APIs. The simulator was used in motion planning assignments for the Aerial Robotics course at WPI. I was responsible for implementing the dynamics, control systems, state machines, and API integration. Camera rendering was done in collaboration with Siyuan Huang (MS WPI).</p>
                     <div class="video_placeholder">
-                        <img src="https://dl.dropbox.com/scl/fi/zvynn0qfaxhd269vusypu/BlenderQuadrotor.jpg?rlkey=pvjbpk4jjmk9xinxzh1efo7vf&st=f8o8391l&dl=0" alt="Blender Quadrotor Simulation" width="900" height="auto" />
+                        <img src="https://dl.dropbox.com/scl/fi/zvynn0qfaxhd269vusypu/BlenderQuadrotor.jpg?rlkey=pvjbpk4jjmk9xinxzh1efo7vf&st=f8o8391l&dl=0" alt="Blender Quadrotor Simulation" max-width="900" height="auto" />
                     </div>
                 
                     <div style="text-align: center; margin-top: 10px;">

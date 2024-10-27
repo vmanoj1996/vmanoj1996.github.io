@@ -104,6 +104,8 @@ p {
     }
 }
 
+
+
 /* Show menu when clicked */
 .nav_active {
     display: flex;
@@ -416,6 +418,11 @@ button:hover, .button:hover {
     justify-content: center;
     margin-top: 5px; /* Optional: add some spacing above */
 }
+.video_placeholder img, .video_placeholder video, .media_card img, .media_card video {
+    max-width: 900px;
+    max-height: 100%;
+    object-fit: contain; /* Ensure content is scaled correctly within the container */
+}
 
 .class_title {
     text-align: center;
@@ -464,9 +471,11 @@ button:hover, .button:hover {
 }
 
 .media_card img, .media_card video {
+    display: flex;
     max-height: 100%; /* Max height is the full height of the container */
     max-width: 100%; /* Max width is the full width of the container */
     object-fit: contain; /* Prevent distortion, maintain aspect ratio */
+    align-items: below;
 }
 
 .slide-arrow {
@@ -494,3 +503,4 @@ button:hover, .button:hover {
     right: 0;
     border-radius: 0 3px 3px 0;
 }
+
