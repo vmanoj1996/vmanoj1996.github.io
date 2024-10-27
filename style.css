@@ -298,6 +298,8 @@ button:hover, .button:hover {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center the text */
+    font-size: 1.2rem; /* Adjust the size as needed */
+    line-height: 1.6; /* Good for readability */
 }
 
 /* Image Styling */
