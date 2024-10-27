@@ -50,20 +50,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-// tech odyssey
-// Function to toggle visibility of content
-function toggleContent(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section.style.display === "none" || section.style.display === "") {
-        section.style.display = "block";  // Expand section
-    } else {
-        section.style.display = "none";   // Collapse section
-    }
-}
-
-// On page load, make sure all sections are expanded
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.content');
-    sections.forEach(section => section.style.display = 'block');
-});

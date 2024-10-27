@@ -390,10 +390,6 @@ button:hover, .button:hover {
     cursor: pointer;
 }
 
-.toggle::after {
-    content: " ▼";  /* Add caret icon */
-}
-
 .content {
     transition: max-height 0.3s ease-out;
 }
