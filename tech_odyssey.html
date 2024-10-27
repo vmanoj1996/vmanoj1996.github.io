@@ -11,10 +11,29 @@
     <section id="tech_odyssey" class="section">
         <div id="tech_odyssey_content">
 
-            <div class="project_class">
-                <h1 class="class_title toggle" onclick="toggleContent('cv_section')">
+            <div class="project_class toggle" data-target="cv" onclick="toggleContent()">
+                <h1 class="class_title">
                     Computer Vision / Deep Learning
                 </h1>
+
+                <!-- content 1 -->
+                <div id="class_section" class="content">
+                    <h2 class="project_title">
+                        VizFlyt: Perception-centric Pedagogical Framework For Autonomous Aerial Robots
+                        <div class="org_year">
+                            <span class="org_name">Worcester Polytechnic Institute</span>
+                            <span class="year_tag">2024</span>
+                        </div>
+                    </h2>
+                    <p>Autonomous aerial robots are becoming commonplace in our lives. Hands-on aerial robotics courses are pivotal in training the next-generation workforce to meet the growing market demands. Such an efficient and compelling course depends on a reliable testbed. In this paper, we present VizFlyt, an open-source perception-centric Hardware-In-The-Loop (HITL) photorealistic testing framework for aerial robotics courses. We utilize pose from an external localization system to hallucinate real-time and photorealistic visual sensors using 3D Gaussian Splatting. This enables stress-free testing of autonomy algorithms on aerial robots without the risk of crashing into obstacles. We achieve over 100Hz of system update rate. Lastly, we build upon our past experiences of offering hands-on aerial robotics courses and propose a new open-source and open-hardware curriculum based on VizFlyt for the future. We test our framework on various course projects in real-world HITL experiments and present the results showing the efficacy of such a system and its large potential use cases.</p>
+                    <p>M. Velmurugan*, K. Srivastava*, R. Kulkarni*, and N. J. Sanket, "VizFlyt: Perception-centric Pedagogical Framework For Autonomous Aerial Robots," submitted to ICRA 2025 (under review, * means equal contribution).</p>
+                    <div class="video_placeholder">
+                        <video width="90%" height="auto" controls>
+                            <source src="https://dl.dropbox.com/scl/fi/z81u4lgbs0cqcs0z4r4qm/viz_flyt_Sequence-01_7.mp4?rlkey=4j08r8fbpa6pytt8pp2dre2e2&st=0i7gnxv7&dl=0" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
                 
             </div>
 
@@ -26,13 +45,13 @@
                 <!-- content 1 -->
                 <div id="class_section" class="content">
                     <h2 class="project_title">
-                        PX4 Hardware-in-the-Loop (HITL) Simulation with Fixed-Wing Plant in Simulink
+                        PX4 Hardware-in-the-Loop (HITL) Simulation with Fixed-Wing Plant
                         <div class="org_year">
                             <span class="org_name">MathWorks</span>
                             <span class="year_tag">2022</span>
                         </div>
                     </h2>
-                    <p>I developed a Simulink and Stateflow model for flight mode management, guidance, and control of a fixed-wing UAV. The custom controller model integrates into the PX4 stack, enabling seamless flight operations. An L1 guidance scheme was used for path tracking, while a cascaded PID controller architecture, inspired by PX4 and Mariano Lizarraga's PhD thesis, was employed for control. <br>I formulated a cascaded control structure to control the following states:</p>
+                    <p>I developed a Simulink and Stateflow model for flight mode management, guidance, and control of a fixed-wing UAV. The custom controller model integrates into the PX4 stack, enabling seamless flight operations. An L1 guidance scheme was used for path tracking, while a cascaded PID controller architecture, inspired by PX4, was employed for control. <br>I formulated a cascaded control structure to control the following states:</p>
                         <ul>
                             <li>Airspeed</li>
                             <li>Altitude & climb rate</li>
@@ -53,7 +72,7 @@
                 <!-- content 2 -->
                 <div id="class_section" class="content">
                     <h2 class="project_title">
-                        PX4 Hardware-in-the-Loop (HITL) Simulation with Quadrotor Plant in Simulink
+                        PX4 Hardware-in-the-Loop (HITL) Simulation with Quadrotor Plant
                         <div class="org_year">
                             <span class="org_name">MathWorks</span>
                             <span class="year_tag">2020-2022</span>
