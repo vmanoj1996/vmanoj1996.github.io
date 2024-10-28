@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="https://unpkg.com/viewerjs/dist/viewer.min.css">
     <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
 
-    <!-- video -->
-    <script src="https://unpkg.com/video.js/dist/video.js"></script>
-    <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
 
     <!-- common js functionality -->
     <script defer src="script.js"></script>
@@ -67,7 +70,7 @@
                         </p>
 
                     <div class="video_placeholder">
-                        <video id="my-video" class="video-js" controls preload="auto" width="900" height="auto" data-setup="{}">
+                        <video id="my-video" preferFullWindow='True' class="video-js" controls preload="auto" width="900" height="auto" data-setup="{}">
                             <source src="https://dl.dropbox.com/scl/fi/bu0e2nqx931r4e5zpgp4a/OutputVisualizationVideoSeq8_v0_with_human_pose.mp4?rlkey=2l5kkrlb21zxodgp51pj7374p&st=j9ht7ipd&dl=0" type="video/mp4" />
                         </video>
                     </div>

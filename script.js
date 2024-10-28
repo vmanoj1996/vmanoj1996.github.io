@@ -89,3 +89,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// const players = Plyr.setup('.custom-plyr', {
+//     fullscreen: { enabled: true, fallback: true },
+//     controls: [
+//         'play-large',  // The large play button in the center
+//         'play',        // Play/pause playback
+//         'progress',    // The progress bar and scrubber
+//         'current-time', // The current time of playback
+//         'mute',        // Toggle mute
+//         'volume',      // Volume control
+//         'fullscreen'   // Toggle fullscreen
+//     ],
+//     disableContextMenu: true // Disable the right-click context menu
+// });
+
+
+// Disable right-click context menu on all video elements
+document.querySelectorAll('video').forEach(video => {
+    video.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+});

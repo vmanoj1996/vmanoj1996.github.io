@@ -421,9 +421,22 @@ button:hover, .button:hover {
     margin-top: 5px; /* Optional: add some spacing above */
 }
 .video_placeholder img, .video_placeholder video, .media_card img, .media_card video {
-    max-width: 900px;
-    max-height: 100%;
+    width: 900px;
     object-fit: contain; /* Ensure content is scaled correctly within the container */
+}
+
+/* Ensure video fills the entire screen in full-screen mode */
+.plyr--full-ui .plyr__video-wrapper{
+    width: 100vw;
+    height: auto ;
+    object-fit: cover;
+}
+
+/* Make the video responsive when not in full-screen */
+.custom-plyr {
+    width: 900px;
+    height: auto;
+    object-fit: contain;
 }
 
 .class_title {
