@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li><a href="tech_odyssey.html">Projects</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="publications.html">Publications</a></li>
+            <li><a href="photography.html">Photography</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="burger" id="burger">
