@@ -3,7 +3,7 @@ const mediaItems = [
     {
         type: 'image',
         src: 'https://dl.dropbox.com/scl/fi/y5h2rcm4sxewlb5bn9dv6/nerc.jpg?rlkey=js2ty2oepvlbf21btju184zei&st=nhexhbsr&dl=0',
-        caption: 'Showcasing the VizFlyt framework at NERC 2024: "VizFlyt: Perception-centric Pedagogical Framework for Autonomous Aerial Robots," submitted to ICRA 2025 (under review).'
+        caption: 'Showcasing the VizFlyt framework at NERC 2024: "VizFlyt: Perception-centric Pedagogical Framework for Autonomous Aerial Robots," accepted at ICRA 2025.'
     },
     {
         type: 'image',
