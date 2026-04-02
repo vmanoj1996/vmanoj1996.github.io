@@ -573,6 +573,11 @@ button:hover, .button:hover {
     border-left: 4px solid #4db6ac;
 }
 
+/* Offset anchor links for sticky navbar */
+[id^="proj-"], [id^="toc-"] {
+    scroll-margin-top: 110px;
+}
+
 .toc_title {
     font-size: 0.75rem;
     font-weight: 700;
@@ -605,9 +610,9 @@ button:hover, .button:hover {
 .toc > ul > li > ul > li {
     font-weight: 400;
     font-size: 0.9rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
     color: #555;
-    padding-left: 0.75rem;
+    padding: 0.25rem 0 0.25rem 0.75rem;
     border-left: 2px solid #e0e0e0;
 }
 
