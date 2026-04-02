@@ -560,5 +560,234 @@ button:hover, .button:hover {
 
 .coursework_list li {
     margin-bottom: 0.5rem;
-    color: #333; /* Adjust color for readability */
+    color: #333;
+}
+
+/* === Publications Page === */
+
+.pub_featured {
+    background: linear-gradient(135deg, #eaf4fb 0%, #f0faf8 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    border-left: 5px solid #c00;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+}
+
+.pub_featured_header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.pub_journal_logo {
+    height: 48px;
+    object-fit: contain;
+}
+
+.pub_featured_title_link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pub_featured_title_link:hover .pub_featured_title {
+    color: #c00;
+}
+
+.pub_focus_link {
+    color: #4db6ac;
+    text-decoration: none;
+}
+
+.pub_focus_link:hover {
+    text-decoration: underline;
+}
+
+.pub_banner_img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    background-color: #e0e0e0;
+}
+
+.pub_featured_body {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.pub_journal_badge {
+    display: inline-block;
+    background-color: #c00;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+}
+
+.pub_featured_title {
+    font-size: 1.8rem;
+    color: #1e3d59;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.pub_authors {
+    color: #555;
+    font-size: 1rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.pub_links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+
+.pub_link {
+    display: inline-block;
+    padding: 0.45rem 1.1rem;
+    background-color: #1e3d59;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.pub_link:hover {
+    background-color: #4db6ac;
+}
+
+.pub_link_secondary {
+    background-color: #4db6ac;
+}
+
+.pub_link_secondary:hover {
+    background-color: #00796b;
+}
+
+.pub_focus_note {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0 0;
+}
+
+.pub_title_inline {
+    color: #1e3d59;
+    font-weight: 600;
+}
+
+.pub_list_heading {
+    font-size: 1.1rem;
+    color: #1e3d59;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 2rem 0 0.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
+}
+
+#publications_content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+#publications_content ul li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.orcid {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+.orcid a {
+    color: #4db6ac;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Press Grid */
+.press_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.press_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: inherit;
+    border-top: 3px solid #4db6ac;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.press_card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+}
+
+.press_outlet {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e3d59;
+    margin-bottom: 0.4rem;
+}
+
+.press_headline {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.press_arrow {
+    font-size: 1.1rem;
+    color: #4db6ac;
+    margin-top: 0.5rem;
+    align-self: flex-end;
+}
+
+.press_card {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.press_card:nth-child(1) { animation-delay: 0.1s; }
+.press_card:nth-child(2) { animation-delay: 0.25s; }
+.press_card:nth-child(3) { animation-delay: 0.4s; }
+.press_card:nth-child(4) { animation-delay: 0.55s; }
+.press_card:nth-child(5) { animation-delay: 0.7s; }
+.press_card:nth-child(6) { animation-delay: 0.85s; }
+
+@media (max-width: 768px) {
+    .press_grid {
+        grid-template-columns: 1fr;
+    }
+    .pub_banner_img {
+        height: 200px;
+    }
+    .pub_featured_body {
+        padding: 1rem;
+    }
 }
