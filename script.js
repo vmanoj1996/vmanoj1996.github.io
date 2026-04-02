@@ -105,6 +105,24 @@ document.addEventListener('DOMContentLoaded', function() {
 // });
 
 
+// Back to top button
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.createElement('button');
+    btn.innerHTML = '&#8593; Top';
+    btn.id = 'back-to-top';
+    btn.title = 'Back to top';
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', function() {
+        btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        btn.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+    });
+
+    btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
 // Disable right-click context menu on all video elements
 document.querySelectorAll('video').forEach(video => {
     video.addEventListener('contextmenu', function(event) {

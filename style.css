@@ -635,6 +635,31 @@ button:hover, .button:hover {
     color: #4db6ac;
 }
 
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1e3d59;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, background 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+#back-to-top:hover {
+    background: #4db6ac;
+}
+
 /* Science Robotics badge on gallery */
 .inline-gallery-container .lg-sub-html:has(.sci-badge) {
     position: absolute;
