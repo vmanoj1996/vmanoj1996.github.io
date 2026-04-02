@@ -151,7 +151,7 @@ p {
 
 .experience_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-bottom: 2rem;
 }
@@ -561,6 +561,46 @@ button:hover, .button:hover {
 .coursework_list li {
     margin-bottom: 0.5rem;
     color: #333;
+}
+
+/* Science Robotics badge on gallery */
+.inline-gallery-container .lg-sub-html:has(.sci-badge) {
+    position: absolute;
+    top: 32px;
+    right: 28px;
+    bottom: auto;
+    left: auto;
+    background: transparent;
+    padding: 0;
+    text-align: right;
+}
+
+.sci-badge {
+    background: rgba(160, 20, 20, 0.82);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sci-badge:hover {
+    background: rgba(160, 20, 20, 1);
+    animation: none;
+}
+
+@keyframes pulse-badge {
+    0%   { box-shadow: 0 0 0 0 rgba(255, 80, 80, 0.9); transform: scale(1); }
+    50%  { box-shadow: 0 0 0 16px rgba(255, 80, 80, 0); transform: scale(1.06); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 80, 80, 0); transform: scale(1); }
+}
+
+.sci-badge {
+    animation: pulse-badge 1.2s ease-out 0.5s 4;
 }
 
 /* === Publications Page === */

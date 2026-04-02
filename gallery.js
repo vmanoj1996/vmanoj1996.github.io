@@ -2,6 +2,11 @@
 const mediaItems = [
     {
         type: 'image',
+        src: './assets/saranga/saranga_video_banner.png',
+        caption: '<a href="https://www.science.org/doi/abs/10.1126/scirobotics.adz9609" target="_blank" class="sci-badge">Science Robotics &nbsp;&middot;&nbsp; Vol 11, Issue 112 &nbsp;&middot;&nbsp; 2026</a>'
+    },
+    {
+        type: 'image',
         src: 'https://dl.dropbox.com/scl/fi/y5h2rcm4sxewlb5bn9dv6/nerc.jpg?rlkey=js2ty2oepvlbf21btju184zei&st=nhexhbsr&dl=0',
         caption: 'Showcasing the VizFlyt framework at NERC 2024: "VizFlyt: Perception-centric Pedagogical Framework for Autonomous Aerial Robots," accepted at ICRA 2025.'
     },
@@ -17,26 +22,25 @@ const mediaItems = [
     },
     {
         type: 'iframe',
-        src: 'https://www.youtube.com/embed/b3mI7rkSX0g?si=aXtvBhUANRoJV6df?rel=0',
-        caption: 'Highlighting our lab’s work in the VICON WPI Case Study, demonstrating advanced motion capture applications.'
+        src: 'https://www.youtube.com/embed/b3mI7rkSX0g?rel=0',
+        caption: "Highlighting our lab's work in the VICON WPI Case Study, demonstrating advanced motion capture applications."
     }
-
-    // You can add more images and videos here
 ];
 
 
 // Prepare items for LightGallery
-const items = mediaItems.map(item => {
+const items = mediaItems.map(function(item) {
     if (item.type === 'image') {
         return {
             src: item.src,
-            subHtml: `<h4>${item.caption}</h4>`,
+            subHtml: '<h4>' + item.caption + '</h4>'
         };
     } else if (item.type === 'iframe') {
         return {
             src: item.src,
             iframe: true,
-            subHtml: `<h4>${item.caption}</h4>`,
+            poster: item.poster || '',
+            subHtml: '<h4>' + item.caption + '</h4>'
         };
     }
 });
@@ -52,12 +56,21 @@ const inlineGallery = lightGallery(lgContainer, {
     appendSubHtmlTo: '.lg-item',
     dynamicEl: items,
     plugins: [lgAutoplay, lgVideo],
-    autoplay: true,           // Enable autoplay
-    pause: 3000,              // Delay between slides (3000ms = 3 seconds)
-    speed: 600,               // Transition speed (600ms)
-    loop: true,               // Enable looping
-    download: false           // Disable download button
+    autoplay: true,
+    pause: 3000,
+    speed: 600,
+    loop: true,
+    download: false
 });
 
 // Open gallery automatically on load
 inlineGallery.openGallery();
+
+// Stop iframe videos when sliding away
+lgContainer.addEventListener('lgBeforeSlide', function() {
+    var iframes = lgContainer.querySelectorAll('.lg-iframe');
+    iframes.forEach(function(iframe) {
+        iframe.src = iframe.src;
+    });
+});
+
