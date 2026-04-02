@@ -43,6 +43,41 @@
                     Computer Vision / Deep Learning
                 </h1>
 
+                <!-- content: Saranga -->
+                <div id="class_section" class="content">
+                    <h2 class="project_title">
+                        Milliwatt ultrasound for navigation in visually degraded environments on palm-sized aerial robots
+                        <div class="org_year">
+                            <span class="org_name">WPI</span>
+                            <span class="year_tag">2025</span>
+                        </div>
+                    </h2>
+                    <div style="display:flex;justify-content:flex-end;margin-bottom:1rem;">
+                        <a href="https://www.science.org/doi/abs/10.1126/scirobotics.adz9609" target="_blank" class="pub_journal_badge" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;">
+                            <span style="background:white;border-radius:3px;padding:1px 4px;display:inline-flex;align-items:center;">
+                                <img src="./assets/scirobot.png" alt="Science Robotics" style="height:16px;vertical-align:middle;">
+                            </span>Vol 11, Issue 112 &nbsp;·&nbsp; 2026
+                        </a>
+                    </div>
+                    <p>Tiny palm-sized aerial robots have exceptional agility and cost-effectiveness in navigating confined and cluttered environments. However, their limited payload capacity directly constrains the sensing suite onboard the robot, thereby limiting critical navigational tasks in Global Positioning System (GPS)–denied wild scenes. Common methods for obstacle avoidance use cameras and light detection and ranging (LIDAR), which become ineffective under visually degraded conditions such as low visibility, dust, fog, or darkness. Other sensors, such as radio detection and ranging (RADAR), have high power consumption, making them unsuitable for tiny aerial robots. Inspired by bats, we propose Saranga, a low-power, ultrasound-based perception stack that localizes obstacles using a dual sonar array. We present two key solutions to combat the low peak signal-to-noise ratio of −4.9 decibels: physical noise reduction and a deep learning–based denoising method. First, we present a practical way to block propeller-induced ultrasound noise on the weak echoes. The second solution is to train a neural network to use the long horizon of ultrasound echoes for finding signal patterns under high amounts of uncorrelated noise where classical methods were insufficient. We generalized to the real world by using a synthetic data generation pipeline augmented with limited and limiting real noise data for training. We enabled a palm-sized aerial robot to navigate under visually degraded conditions of dense fog, darkness, and snow in a cluttered environment with thin and transparent obstacles using only onboard sensing and computation. We provide extensive real-world results to demonstrate the efficacy of our approach.</p>
+
+                    <p>M. Velmurugan, P. Brush, C. Balfour, R. J. Przybyla, and N. J. Sanket, "Milliwatt ultrasound for navigation in visually degraded environments on palm-sized aerial robots," <em>Science Robotics</em>, vol. 11, no. 112, 2026. </p>
+
+                    <div class="video_placeholder">
+                        <video id="saranga-video" class="video-js" controls preload="auto" width="900" height="auto"
+                            poster="./assets/saranga/saranga_video_banner.png" data-setup="{}">
+                            <source src="https://dl.dropbox.com/scl/fi/r4i5xfazday6zg740kplu/Sequence-01_2_4k.mp4?rlkey=unxmg788buy7tw1crh9xq8v4b&st=9gnvd9bv&raw=1" type="video/mp4" />
+                        </video>
+                    </div>
+
+                    <div style="text-align:center;margin-top:10px;display:flex;gap:1rem;justify-content:center;">
+                        <a href="https://www.science.org/doi/abs/10.1126/scirobotics.adz9609" target="_blank">Full Research Article</a>
+                    </div>
+                    <p style="margin-top:1.2rem;font-size:0.95rem;color:#555;">
+                        <a href="https://www.science.org/doi/abs/10.1126/scirobotics.aef8847" target="_blank"><em>"The forgotten spectrum: Reviving ultrasound for robust autonomy"</em></a> by X. Zhou and F. Gao highlights this work. See also <a href="publications.html#press">press &amp; media mentions</a>.
+                    </p>
+                </div>
+
                 <!-- content 1 -->
                 <div id="class_section" class="content">
                     <h2 class="project_title">
@@ -53,7 +88,7 @@
                         </div>
                     </h2>
                     <p>Autonomous aerial robots are becoming commonplace in our lives. Hands-on aerial robotics courses are pivotal in training the next-generation workforce to meet the growing market demands. Such an efficient and compelling course depends on a reliable testbed. In this paper, we present VizFlyt, an open-source perception-centric Hardware-In-The-Loop (HITL) photorealistic testing framework for aerial robotics courses. We utilize pose from an external localization system to hallucinate real-time and photorealistic visual sensors using 3D Gaussian Splatting. This enables stress-free testing of autonomy algorithms on aerial robots without the risk of crashing into obstacles. We achieve over 100Hz of system update rate. Lastly, we build upon our past experiences of offering hands-on aerial robotics courses and propose a new open-source and open-hardware curriculum based on VizFlyt for the future. We test our framework on various course projects in real-world HITL experiments and present the results showing the efficacy of such a system and its large potential use cases.</p>
-                    <p>M. Velmurugan*, K. Srivastava*, R. Kulkarni*, and N. J. Sanket, "VizFlyt: Perception-centric Pedagogical Framework For Autonomous Aerial Robots," submitted to ICRA 2025 (under review, * means equal contribution).</p>
+                    <p>M. Velmurugan*, K. Srivastava*, R. Kulkarni*, and N. J. Sanket, "VizFlyt: Perception-centric Pedagogical Framework For Autonomous Aerial Robots," <em>2025 IEEE International Conference on Robotics and Automation (ICRA)</em>, Atlanta, GA, USA, 2025, pp. 9920–9927. (* equal contribution)</p>
 
                     <div class="video_placeholder">
                         <video id="my-video" class="video-js" controls preload="auto" width="900" height="auto" data-setup="{}">
@@ -305,6 +340,7 @@
 
     <script>
         videojs(document.querySelector('#my-video'));
-      </script>
+        videojs(document.querySelector('#saranga-video'));
+    </script>
 </body>
 </html>
