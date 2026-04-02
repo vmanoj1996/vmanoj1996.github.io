@@ -563,6 +563,73 @@ button:hover, .button:hover {
     color: #333;
 }
 
+/* Projects TOC */
+.toc {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.2rem 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid #4db6ac;
+}
+
+.toc_title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+    margin: 0 0 0.8rem;
+}
+
+.toc > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.toc > ul > li {
+    font-weight: 600;
+    color: #1e3d59;
+}
+
+.toc > ul > li > ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.4rem;
+}
+
+.toc > ul > li > ul > li {
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    color: #555;
+    padding-left: 0.75rem;
+    border-left: 2px solid #e0e0e0;
+}
+
+.toc a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    color: #4db6ac;
+}
+
+@media (max-width: 768px) {
+    .toc > ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+.toc a:hover {
+    color: #4db6ac;
+}
+
 /* Science Robotics badge on gallery */
 .inline-gallery-container .lg-sub-html:has(.sci-badge) {
     position: absolute;

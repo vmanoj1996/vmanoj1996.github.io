@@ -36,9 +36,39 @@
 >
 <body>
     <section id="tech_odyssey" class="section">
+        <div class="toc">
+            <p class="toc_title">Contents</p>
+            <ul>
+                <li><a href="#toc-cv">Computer Vision / Deep Learning</a>
+                    <ul>
+                        <li><a href="#toc-cv">Saranga — Milliwatt Ultrasound Navigation</a></li>
+                        <li><a href="#toc-cv">VizFlyt</a></li>
+                        <li><a href="#toc-cv">libxfeat — CUDA C++ XFeat Port</a></li>
+                        <li><a href="#toc-cv">EinsteinVision</a></li>
+                    </ul>
+                </li>
+                <li><a href="#toc-uav">Unmanned Aerial Vehicles (UAV)</a>
+                    <ul>
+                        <li><a href="#toc-uav">PX4 HITL — Fixed-Wing</a></li>
+                        <li><a href="#toc-uav">PX4 HITL — Quadrotor</a></li>
+                        <li><a href="#toc-uav">Parrot Minidrone Controllers & Estimators</a></li>
+                        <li><a href="#toc-uav">In-House Autopilot — Indoor Quadcopter</a></li>
+                        <li><a href="#toc-uav">First Solar-Powered Airplane of IIT Madras</a></li>
+                    </ul>
+                </li>
+                <li><a href="#toc-physics">Physics Engines</a>
+                    <ul>
+                        <li><a href="#toc-physics">MuJoCo Simulink Blockset</a></li>
+                        <li><a href="#toc-physics">VEX Mobile Robot in Gazebo</a></li>
+                        <li><a href="#toc-physics">Vision-Centric Quadrotor Simulator in Blender</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
         <div id="tech_odyssey_content">
 
-            <div class="project_class toggle" data-target="cv" onclick="toggleContent()">
+            <div class="project_class toggle" data-target="cv" id="toc-cv" onclick="toggleContent()">
                 <h1 class="class_title">
                     Computer Vision / Deep Learning
                 </h1>
@@ -147,7 +177,7 @@
 
             </div>
 
-            <div class="project_class toggle" data-target="uav" onclick="toggleContent()">
+            <div class="project_class toggle" data-target="uav" id="toc-uav" onclick="toggleContent()">
                 <h1 class="class_title">
                     Unmanned Aerial Vehicles (UAV)
                 </h1>
@@ -289,7 +319,7 @@
 
             <!-- CLASS PHYSICS ENGINES -->
 
-            <div class="project_class toggle" data-target="physics" onclick="toggleContent()">
+            <div class="project_class toggle" data-target="physics" id="toc-physics" onclick="toggleContent()">
                 <h1 class="class_title">
                     Physics Engines
                 </h1>
