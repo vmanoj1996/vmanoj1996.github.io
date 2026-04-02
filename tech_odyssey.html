@@ -102,6 +102,26 @@
                     </div>
                 </div>
 
+                <!-- content: libxfeat -->
+                <div id="class_section" class="content">
+                    <h2 class="project_title">
+                        libxfeat: CUDA C++ Port of XFeat Image Feature Extractor
+                        <div class="org_year">
+                            <span class="org_name">WPI</span>
+                            <span class="year_tag">2024</span>
+                        </div>
+                    </h2>
+                    <p>A native CUDA and C++ reimplementation of XFeat (CVPR 2024), a state-of-the-art deep learning image feature extractor. Achieved 1700 FPS on an NVIDIA RTX 4070 — against 1000 FPS on the original PyTorch implementation. Built custom CUDA kernels for convolution, max pool, bilinear interpolation, im2row, and normalization. Used a custom im2row kernel followed by cuBLASLt GEMM to accelerate convolution layers, and leveraged CUDA Graphs to hide kernel launch and synchronization overhead. Optimized kernel launch configurations and cache coherency through profile-guided tuning using Nsight Systems and Nsight Compute. Explored const memory, texture cache, shared memory, tensor cores, compile-time constants, loop unrolling, and templates to squeeze every last bit of performance.</p>
+
+                    <div class="video_placeholder">
+                        <img src="https://raw.githubusercontent.com/vmanoj1996/libxfeat/main/data/heatmap_visualization.png" alt="libxfeat: XFeat feature extraction on Taj Mahal" style="width:900px;" class="dynamic-image">
+                    </div>
+
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://github.com/vmanoj1996/libxfeat" target="_blank">GitHub Repository</a>
+                    </div>
+                </div>
+
                 <!-- content -->
                 <div id="class_section" class="content">
                     <h2 class="project_title">
@@ -119,13 +139,12 @@
                             <source src="https://dl.dropbox.com/scl/fi/bu0e2nqx931r4e5zpgp4a/OutputVisualizationVideoSeq8_v0_with_human_pose.mp4?rlkey=2l5kkrlb21zxodgp51pj7374p&st=j9ht7ipd&dl=0" type="video/mp4" />
                         </video>
                     </div>
-                        
 
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://dl.dropbox.com/scl/fi/qj2b2v99fss53vapksirf/einsteinVision_manoj_rishabh.pdf?rlkey=7mmof7rk9eii4b6kbqv0fr8hq&st=4p6duxs3&dl=0" target="_blank">Project Report</a>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="project_class toggle" data-target="uav" onclick="toggleContent()">
